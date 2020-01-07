@@ -17,7 +17,7 @@
   - for humanoid robot design
   - Imitation of human actions
   - Action recognition
-  - Visualisation of human movements
+  - Visualization of human movements
 - *Interfaces and data structures* for the *transfer of motor knowledge* between different embodiments
 
 #### Models:
@@ -42,3 +42,27 @@ Replacement of any module(perception, recognition, visualization, reproduction) 
 
  - All perceptive modules convert their output to the MMM format
  - All recognition and reproduction modules convert the MMM format to their specific internal representation
+
+## Contact Detection and grasp verification
+
+### Contact Detection using joint torques
+
+- Compute weighted sum of finger joint torques
+- Contact is detected where a threshold is surpassed.
+
+### Object grasped successfully?
+
+- Calculate distances:
+  - between different  fingertips (for precision grasps)
+  - between different fingertips and the palm (for power grasps)
+
+## Detection of Deformability
+
+###  Deformable objects can be detected:
+
+- Grasp an object
+- Verify that the grasp was successful
+- Increase the joint torques
+- Determine distances between the fingertips
+  - Decreased distances indicate a deformable object
+
