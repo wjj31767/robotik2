@@ -1,3 +1,5 @@
+[TOC]
+
 # Imitation Learning
 
 learning from human observation

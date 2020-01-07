@@ -1,3 +1,5 @@
+[TOC] 
+
 # Active Perception
 
 - definitions

@@ -1,4 +1,7 @@
+[TOC]
+
 # Grasping
+
 ## Arten of Grasp:
 A system wherein a desired object is gripped by the fingers of a robot and is generally called a **grasp**
 - **Precision grasp**: objects gripped by fingertips only
@@ -9,7 +12,7 @@ A system wherein a desired object is gripped by the fingers of a robot and is ge
 1. **Dexterity**: how should grasping fingers be configured?
 2. **Equilibrium**: How hard to squeeze the grasped object?
 3. **Stability**: How to remain unaffected by external disturbances?
-4. **Dynamic behaviour**:How soft a grasp should be for a given task?
+4. **Dynamic behavior**: How soft a grasp should be for a given task?
 [Screenshot-2019-12-30-at-12-31-48.png](https://postimg.cc/ZBq5SpSg)
 
 ## Grasp analysis and grasp synthesis
@@ -24,13 +27,26 @@ for point contact
 - **Soft contact**: Allows the finger to exert a pure torsional moment about the common normal at the point of contact
 ---
 ## grasp hypotheses
+
+- [ ] TODO
+
+- Prior object knowledge
+- Object-grasp representations
+- Features of different modalities such as 2D or 3D vision or tactile sensors.
+- Grasp synthesis
+- Task
+- Hand kinematics
+
 @ todo
  > **Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014**
+ >
+ > - Aspects that influence the generation of grasp hypotheses
+ > - Classification of the different approaches
 
 ---
 ## Object classes 
 - **Known objects**(Grasp planning is always about known objects)
-    - Known object geometry(we have a complete geometric object model)
+    - Known object geometry (we have a complete geometric object model)
     - Approach: Use various grasp planning methods(only for known objects)
 - **Familiar objects**: 
     - Class of object is known
@@ -39,6 +55,7 @@ for point contact
     - no knowledge of the object
     - Challenges: Dealing with incomplete sensor data, segmentation from the background, building a (partial) object model
     - Ideas: Multi sensor fusion, pushing the object
+
 ## The Human Hand
 - [**Bones and joints**](https://en.wikipedia.org/wiki/Phalanx_bone#/media/File:Scheme_human_hand_bones-en.svg)
 - **Anatomy** : 27 bones -- 27 DoF(total)
@@ -47,14 +64,55 @@ for point contact
     - **MMM model**: 
         - Kinematics: 23 DoF
         - Anthropometric data: Anatomically correct finger segment lengths depend on total hand length
+
+## Human Hand models in literature
+
+- Large variety of human hand models 
+  - Different kinematic models
+  - Varying numbers of DOF
+  - Depending on the purpose
+  - Not only in robotics but also in computer vision, human-computer interaction, biomedical engineering
+
+- Different applications
+  - Grasp planning and analysis: More Complex thumb kinematics useful
+  - Prosthetics hands
+  - Understanding human grasping
+  - Tracking  (usually no intrinsic DoFs in the palm necessary)
+
+- Always trade-off between intended use and complexity
+
 ## Grasping in Humans
 ### Arten: 
 supposition: the intended activity determines what type of grasp is used for any given action
 - **Precision grasp**: characterized by opposition of the thumb to one or more of the other fingers
 - **Power grasp**: the fingers are flexed to form a clamp against the palm
-### the kinematics & neuropsychology of grasping
-@todo
+### Neuroscience of grasping
+- [ ] TODO
+
 > Umberto Castiello. The neuroscience of grasping, Nature Rev. Neurosci. 5, 726-736(2005)
+>
+> This review examines one of these actions -- grasping
+
+- Precision and Power grips
+  - Precision grasp: characterized by opposition of the thumb to one or more of the other fingers.
+  - Power grasp: the fingers are flexed to form a clamp against the palm
+
+- Supposition
+  - intended activity determines what type of grasp is used for any given action	
+
+- Goal :
+
+  Integrate information from various domains to ascertain which neural circuits underlie grasping
+
+- Paper contributions:
+  - Kinematics of grasping in human and macaque monkeys
+  - Evidence that grasping requires several neural mechanisms, some of which are concerned with individual finger force and movement, and others that involve a specialized visuomotor system that encodes object features and generates the corresponding hand configurations
+  - Evidence from lesion and neuroimaging studies in humans is compared with neurophysiological studies in monkeys
+
+## Kinematics of grasping
+
+- [ ] TODO
+
 ### Haptics in human grasping
 ~~c3 37~~
 [Screenshot-2019-12-30-at-19-50-24.png](https://postimg.cc/sBJQdqsC)
