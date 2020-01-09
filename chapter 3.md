@@ -26,42 +26,40 @@ In the situation of point contact
 - **Frictional point contact**: A contact that can transmit both a normal and tangential force
 - **Soft contact**: Allows the finger to exert a pure torsional moment about the common normal at the point of contact
 ---
- > - ## grasp hypotheses
- >
- >   @ todo
- >
- >    > **Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014**
- >    >
- >    > - Aspects that influence the generation of grasp hypotheses
- >    >   - Prior object knowledge
- >    >     - known
- >    >     - unknown
- >    >     - familiar
- >    >   - Object-grasp representations
- >    >     - local
- >    >     - global
- >    >   - object features
- >    >     - multi-modal
- >    >     - 3D
- >    >     - 2D
- >    >   - Grasp synthesis
- >    >     - analysis
- >    >     - data-driven
- >    >   - Task
- >    >   - Hand kinematics
- >    >     - gripper
- >    >     - multi-fingered
- >    > - Classification of the different approaches
- >    >   - Prior knowledge
- >    >     - know object 
- >    >       - use various grasp planning methods
- >    >     - familiar object
- >    >       - reuse grasp knowledge from known class members for new object
- >    >     - unknown object
- >    >       - multi sensor fusion, pushing the object
- >
+## grasp hypotheses
 
----
+@ todo
+
+ > **Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014**
+ >
+ > - Aspects that influence the generation of grasp hypotheses
+ >  - Prior object knowledge
+ >     - known
+ >     - unknown
+ >     - familiar
+ >   - Object-grasp representations
+ >     - local
+ >     - global
+ >   - object features
+ >     - multi-modal
+ >     - 3D
+ >     - 2D
+ >   - Grasp synthesis
+ >     - analysis
+ >     - data-driven
+ >   - Task
+ >   - Hand kinematics
+ >     - gripper
+ >     - multi-fingered
+ > - Classification of the different approaches
+ >   - Prior knowledge
+ >     - know object 
+ >       - use various grasp planning methods
+ >     - familiar object
+ >       - reuse grasp knowledge from known class members for new object
+ >     - unknown object
+ >       - multi sensor fusion, pushing the object
+
 ## Object classes 
 - **Known objects**(Grasp planning is always about known objects)
     - Known object geometry (we have a complete geometric object model)
@@ -212,7 +210,7 @@ In the situation of point contact
 ### Arten
 - Cutkosky Taxonomy
 
-  [![2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
+  [[2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
 
 - Kamakura Taxonomy
 
