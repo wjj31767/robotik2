@@ -230,14 +230,51 @@ Motion (sentence) as sequences of poses (words)
 > Christopher Y. Brown and Harry Asada. Inter-Finger Coordination and Postural Synergies in Robot Hands via Mechanical Implementation of Principal Components Analysis, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), (2007)
 
 > c3
-### The TUAT/Karlsruhe Humanoid Hand
+### The TUAT/Karlsruhe Humanoid Underactuated Hand
+
 @todo
 > Naoki Fukaya, Tamim Asfour  ,  Rüdiger Dillmann  and Shigeki Toyama,  Development of a Five  -  Finger Dexterous Hand without Feedback control: the  TUAT  Intelligent Robots and Systems  /Karlsruhe Humanoid Hand  ,  IEEE/RSJ International Conference on  (  IROS  2013)
 
 > Weiner, P., Starke, J., Hundhausen, F., Beil, J. and Asfour, T.,  The KIT Prosthetic  Hand: Design and Control  , IEEE/RSJ International Conference on Intelligent  Robots and Systems (IROS), pp. 3328  -  3334, October, 2018
 
 > c3
+
+#### Underactuation
+
+**Underactuation** expresses the property of a system to have an input vector of smaller dimension than the output vector
+
+- In robotic, it means having fewer actuators then degrees of freedoms(DoF)
+  - Simple control
+  - Adapt to the shape of the object
+  - Mechanical intelligence
+
+- core idea/benifit:
+  - Light weight, similar size, similar motion
+  - only one actuator
+  - No need for sensors, simple operation
+  - Self-make a best gripping shape
+  - Self adjustment of fingertip force
+  - No need for feedback control
+
+- Motivation: Typical grasp motion of daily life 
+
+  (cylinderical grasp, tip, hook or snap, palmer, spherical, lateral)
+
+- Latest version(2013)
+  
+- `c3 136` + `Development of a Five-F Dexterous Hand without Feedback control:`
+  
+- The KIT prosthetic hand 
+Personalised prosthetic hands with semi-autonomous grasping abilities
+  - The KIT Prosthetic Hand: Design and Control
+  - ~~male and female prosthetic hands c3 s145~~
+  - ~~Hand Design~~
+
+
+
+
 ## Grasping Known, Familiar and Unknown Objects
+
 ### 1. Grasping Known Objects
 [Screenshot-2020-01-02-at-10-45-06.png](https://postimg.cc/1nyvpQhw)
 ```mermaid
