@@ -1,5 +1,5 @@
-[TOC]
 
+@[toc]
 # Grasping
 
 ## Fundamentals and definitions
@@ -217,8 +217,42 @@ In the situation of point contact
   [[2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
 
 - Kamakura Taxonomy
-
+  - the taxonomy considers 
+  1. purpose of a grasp
+  2. hand shape
+  3. contact points with objects
+  - Category:
+	- Power Grips
+	  - Power Grip-Standard Type
+	  - Power Grip-hook Type
+	  - Power Grip-Index Extension Type
+	  - Power Grip-Extension Type
+	  - Power Grip-Distal Type
+  - Mid-Power-Precision Grips
+    - Lateral Grip
+    - Tripod Grip-Standard Type
+    - Tripod Grip-Variation I
+    - Tripod Grip-Variation II
+  - Precision Grips
+    - Parallel Mild Flexion Grip
+    - Circular Mild Flexion Grip
+    - Tip Grip
+    - Parallel Extension Grip
+  -  Thumbless 
+    - Adduction Grip      
+`c3 46 - 53`
 - **Bullock Taxonomy**: 
+	- Contact:
+		- Hand is touching an external object or the environment 
+	- Prehensile
+		- Action of hand on object must be described with more than one virtual finger 
+	- Motion
+		- Any part of the hand moves relative to body fixed frame 
+	- Within Hand
+		- Points on the hand are moving relative to the hand base frame 
+	- Motion at acontact  
+		- Object reference frame moves relative to contact point frames. 
+`c3 53` 
 @ todo
 
   
@@ -226,16 +260,43 @@ In the situation of point contact
 > Bullock, I.M.; Ma, R.R.; Dollar, A.M., "A Hand-Centric Classification of Human and Robot Dexterous Manipulation," IEEE Transactions on Haptics, 6(2):129-144, 2013
 ### Whole-body poses & Duality of grasping
 @ to do 
+- Selection of support pose -- Grasp selection
+- Selection of contact points -- Grasp synthesis
+- Classification of support pose possibilities -- Grasping taxonomies
 > T. Asfour, J. Borràs, C. Mandery, P. Kaiser, E. E. Aksoy  and  M.  Grotz  , On  the  Advanced  dualities  between  grasping  and  whole  -  body loco  -  manipulation  tasks  , Robotics Research, Springer  Proceedings  in  Robotics, Springer,  2018
 
 > J  .  Borràs  and T. Asfour, A  Whole  -  Body Pose  Taxonomy  for  Loco  -  Manipulation Tasks, IEEE/  RSJ  International Conference on  Intelligent Robots and Systems (  IROS  ), pp. 1578  -  1585,  October  , 2015
 - Duality of grasping and balancing
 - Whole body poses in loco manipulation tasks
+	- Given: humanoid, task and scene and its affordances:
+		- How many poses can be realized?
+		- Which pose should be selected?
+		- How to realize it ? palnning, control  
 - Towards a taxonomy of whole body support poses
+	- Criteria for classification:
+		-  number of contacs: relevant for balance conditions/ control
+		-  type of contacts: determine the mobility (DOFs) and the transmission of contact forces
+		- possible transitions: We only allow one contact change at time 
 - Type of contacts
+	- Type of contact with arms:
+		- tips
+		- fingers
+		- palm
+		- arm
+		- hold
+	- type of contacts with legs
+		-  tip-toes
+		- feet
+		- knees 
 - Taxonomy of whole body poses
    - total: 46 classes 
+   - 18 standing poses
+   - 18 kneeling poses
+   - 10 resting poses
 - Classification of whole body actions
+	- Type I: Actions to change the envrionment
+	- Type II: Actions to change the body 
+	- Type III: Combination of I and II
 - Validation of the taxonomy
 - Analysis of pose transitions
 - benefits:
@@ -248,11 +309,22 @@ In the situation of point contact
 - Language model to generate multi-contact motions @todo `c3 79`
 Motion (sentence) as sequences of poses (words)
 ### Postural Synergies 
+- Definition: Postrual synergies are the correlation of degrees of freedom in patterns of more frequent use.
 @todo 
 > Marco  Santello  , Martha Flanders, John F.  Soechting  .  Postural Hand Synergies for  Tool Use  , The Journal of Neuroscience, 18(23): 10105  -  10115 (1998)
+>  - Human were asked to perform grasp 57 kinds of objects with imaging
+>  - Result:
+>  	- Considering only the first two principal components, 80% of the variance in the data can be represented.
+>  	- Using the first threee principal components, 97% of the variance can be represented
+>  - This suggests a significant reduction in the number of degrees of freedom (DOF) from 15 to 2 or 3
+>  - The study shows also that there were also many instances in which pairs of joint angles were only poorly correlated, suggesting that there are more than two effective degrees of freedom for the control of hand posture and that several higher-orer PCs would also be needed to represent this rather limited co-variation in joint angles
+>  
 
 > Antonio  Bicchi  , Marco Gabiccini, Marco  Santello  .  Modelling natural and artificial  hands with synergies  3153  -  3161 (2011)
-
+>  - How do humans grasp? Do they control all the hand’s DoF individually?
+		- Not all finger joints are controlled independently when grasping an object
+		- Movements of the finger joints are strongly correlated
+		- Grasping mvoements are dominated by synergies in a low - dimensional posture space 
 > c3
 ### Eigengrasps
 @todo
