@@ -26,22 +26,40 @@ In the situation of point contact
 - **Frictional point contact**: A contact that can transmit both a normal and tangential force
 - **Soft contact**: Allows the finger to exert a pure torsional moment about the common normal at the point of contact
 ---
-## grasp hypotheses
-
-- [ ] TODO
-
-- Prior object knowledge
-- Object-grasp representations
-- Features of different modalities such as 2D or 3D vision or tactile sensors.
-- Grasp synthesis
-- Task
-- Hand kinematics
-
-@ todo
- > **Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014**
+ > - ## grasp hypotheses
  >
- > - Aspects that influence the generation of grasp hypotheses
- > - Classification of the different approaches
+ >   @ todo
+ >
+ >    > **Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014**
+ >    >
+ >    > - Aspects that influence the generation of grasp hypotheses
+ >    >   - Prior object knowledge
+ >    >     - known
+ >    >     - unknown
+ >    >     - familiar
+ >    >   - Object-grasp representations
+ >    >     - local
+ >    >     - global
+ >    >   - object features
+ >    >     - multi-modal
+ >    >     - 3D
+ >    >     - 2D
+ >    >   - Grasp synthesis
+ >    >     - analysis
+ >    >     - data-driven
+ >    >   - Task
+ >    >   - Hand kinematics
+ >    >     - gripper
+ >    >     - multi-fingered
+ >    > - Classification of the different approaches
+ >    >   - Prior knowledge
+ >    >     - know object 
+ >    >       - use various grasp planning methods
+ >    >     - familiar object
+ >    >       - reuse grasp knowledge from known class members for new object
+ >    >     - unknown object
+ >    >       - multi sensor fusion, pushing the object
+ >
 
 ---
 ## Object classes 
@@ -67,25 +85,9 @@ In the situation of point contact
 
 ## Human Hand models in literature
 
-- Large variety of human hand models 
-  - Different kinematic models
-  - Varying numbers of DOF
-  - Depending on the purpose
-  - Not only in robotics but also in computer vision, human-computer interaction, biomedical engineering
-
-- Different applications
-  - Grasp planning and analysis: More Complex thumb kinematics useful
-  - Prosthetics hands
-  - Understanding human grasping
-  - Tracking  (usually no intrinsic DoFs in the palm necessary)
-
 - Always trade-off between intended use and complexity
 
 ## Grasping in Humans
-### Arten: 
-supposition: the intended activity determines what type of grasp is used for any given action
-- **Precision grasp**: characterized by opposition of the thumb to one or more of the other fingers
-- **Power grasp**: the fingers are flexed to form a clamp against the palm
 ### Neuroscience of grasping
 - [ ] TODO
 
@@ -99,7 +101,7 @@ supposition: the intended activity determines what type of grasp is used for any
 
 - Supposition
   
-- intended activity determines what type of grasp is used for any given action	
+  - intended activity determines what type of grasp is used for any given action	
   
 - Goal :
 
@@ -112,7 +114,11 @@ supposition: the intended activity determines what type of grasp is used for any
 
 ## Kinematics of grasping
 
-- kinematics consider movement in terms of position and displacement (angular and linear) of body segments, center of gravity, and acceleration and velocities of the whole body or segments of the body.
+- kinematics consider 
+  - movement in terms of position
+  - displacement (angular and linear) of body segments
+  - center of gravity
+  - acceleration and velocities of the whole body or segments of the body.
 - The mechanics of grasping in humans and macaque monkeys vary depending on object attributes
 - Although the substantial differences in hand morphology between these two species are the focus of current debate.
 
@@ -174,10 +180,28 @@ supposition: the intended activity determines what type of grasp is used for any
 
 `c3 38-39`
 
-- **reach phase**: @to do 
-- **load phase**:
-- **lift phase**:
-- **replace phase**:
+- @to do 
+
+  - **reach phase**: 
+    - object is approached
+    - hand in grasping pre-shape
+    - control based on vision
+    - finger makes contact
+      - tactile: high frequency vibrations
+  - **load phase**:
+    - fingers are closed
+    - tangential load force is increased
+    - grip force is adjusted accordingly to prevent finger slip
+    - object breaks contact with support surface
+      - tactile: high frequency vibrations
+  - **lift phase**:
+    - grip force is controlled to prevent slip
+    - object if lifted from the surface
+    - object has reached desired height
+      - visual
+  - **replace phase**:
+  - humans use feed forward control to predict sensory input 
+  - When prediction mismatches actual input corrective actions are taken
 ## Grasping Taxonomies
 ### purposes
 - Benchmark to test robot hand abilities
@@ -186,9 +210,17 @@ supposition: the intended activity determines what type of grasp is used for any
 - Optimization of synergies: Formulation of dexterity/functionality as number of achievable grasps for maximization
 - guide autonomous grasp selection
 ### Arten
-- Cutkosky / Kamakura Taxonomy
+- Cutkosky Taxonomy
+
+  [![2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
+
+- Kamakura Taxonomy
+
 - **Bullock Taxonomy**: 
 @ todo
+
+  
+
 > Bullock, I.M.; Ma, R.R.; Dollar, A.M., "A Hand-Centric Classification of Human and Robot Dexterous Manipulation," IEEE Transactions on Haptics, 6(2):129-144, 2013
 ### Whole-body poses & Duality of grasping
 @ to do 
