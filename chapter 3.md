@@ -21,7 +21,7 @@ A system wherein a desired object is gripped by the fingers of a robot and is ge
 [Screenshot-2019-12-30-at-12-44-13.png](https://postimg.cc/wtgG3k3W)
 
 ## Grasp contacts
-for point contact
+In the situation of point contact
 - **Frictionless point contact**: Finger can only exert a force along the common normal at the point of contact
 - **Frictional point contact**: A contact that can transmit both a normal and tangential force
 - **Soft contact**: Allows the finger to exert a pure torsional moment about the common normal at the point of contact
