@@ -2,31 +2,35 @@
 
 # Grasping
 
-## Arten of Grasp:
-A system wherein a desired object is gripped by the fingers of a robot and is generally called a **grasp**
+## Fundamentals and definitions
+
+### Arten of Grasp:
+
+- Definition:
+  - A system wherein a desired object is gripped by the fingers of a robot and is generally called a **grasp**
+
 - **Precision grasp**: objects gripped by fingertips only
 - **Force-closure- grasp** is a grasp which is able to:
     - generate an external force that the grasped object may have to exert on an external body and
     - counteract any external disturbing forces that may try to loosen the grip
-## Grasp properties:
+### Grasp properties:
 1. **Dexterity**: how should grasping fingers be configured?
 2. **Equilibrium**: How hard to squeeze the grasped object?
 3. **Stability**: How to remain unaffected by external disturbances?
 4. **Dynamic behavior**: How soft a grasp should be for a given task?
 [Screenshot-2019-12-30-at-12-31-48.png](https://postimg.cc/ZBq5SpSg)
 
-## Grasp analysis and grasp synthesis
+### Grasp analysis and grasp synthesis
 - **Analysis** means the study of grasp properties for a given set of finger properties
 - **Synthesis** means the determination of the required finger properties  in order for the grasp to acquire some desired properties
 [Screenshot-2019-12-30-at-12-44-13.png](https://postimg.cc/wtgG3k3W)
 
-## Grasp contacts
+### Grasp contacts
 In the situation of point contact
 - **Frictionless point contact**: Finger can only exert a force along the common normal at the point of contact
 - **Frictional point contact**: A contact that can transmit both a normal and tangential force
 - **Soft contact**: Allows the finger to exert a pure torsional moment about the common normal at the point of contact
----
-## grasp hypotheses
+### grasp hypotheses
 
 @ todo
 
@@ -60,7 +64,7 @@ In the situation of point contact
  >     - unknown object
  >       - multi sensor fusion, pushing the object
 
-## Object classes 
+### Object classes 
 - **Known objects**(Grasp planning is always about known objects)
     - Known object geometry (we have a complete geometric object model)
     - Approach: Use various grasp planning methods(only for known objects)
@@ -81,7 +85,7 @@ In the situation of point contact
         - Kinematics: 23 DoF
         - Anthropometric data: Anatomically correct finger segment lengths depend on total hand length
 
-## Human Hand models in literature
+### Human Hand models in literature
 
 - Always trade-off between intended use and complexity
 
@@ -110,37 +114,38 @@ In the situation of point contact
   - Evidence that grasping requires several neural mechanisms, some of which are concerned with individual finger force and movement, and others that involve a specialized visuomotor system that encodes object features and generates the corresponding hand configurations
   - Evidence from lesion and neuroimaging studies in humans is compared with neurophysiological studies in monkeys
 
-## Kinematics of grasping
+### Kinematics of grasping
 
 - kinematics consider 
   - movement in terms of position
   - displacement (angular and linear) of body segments
   - center of gravity
   - acceleration and velocities of the whole body or segments of the body.
-- The mechanics of grasping in humans and macaque monkeys vary depending on object attributes
-- Although the substantial differences in hand morphology between these two species are the focus of current debate.
 
 > Jeannerod, M. in Attention and Performance IX (eds Long, J. & Baddeley, A.) 153–168 (Erlbaum, Hillsdale, 1981). This paper was the first to characterize kinematically the reach-to-grasp movement in humans. This seminal work laid the foundation of much of our current understanding of grasping. Jeannerod, M. The timing of natural prehension movements. J. Mot. Behav. 16, 235–254 (1984).
 
 - Jeannerod coded grasping in terms of changes in grip aperture
   - Definition: grip aperture is the separation between the thumb and the index finger
-  - During the a reach-to-grasp movement, there is first a progressive opening of the grip with straightening of the fingers, followed by a gradual closure of the grip until it machtes the object's size
-  - The point in time at which the thumb-finger opening is the largest (maximum grip aperture) is a clearly identifiable landmark that
+  - During the a reach-to-grasp movement
+    1. a progressive opening of the grip with straightening of the fingers
+    2. followed by a gradual closure of the grip until it matches the object's size
+- The point in time at which the thumb-finger opening is the largest (maximum grip aperture) is a clearly identifiable landmark that
     - occurs with 60-70% of the duration of the reach and is highly correlated with the size of the object
-
+    - is highly correlated with the size of the object
+  
 - grasping progress
 
-  a. The hand preshapes during its journey to the target object.
+  1. The hand preshapes during its journey to the target object.
 
-  b. maximal grip aperture (distance between the tip of the thumb and the tip of index finger) typically occurs within 70% of the movement completion. 
+  2. maximal grip aperture (distance between the tip of the thumb and the tip of index finger) typically occurs within 70% of the movement completion. 
 
-  c. Representation of traces demonstrating the scaling of maximum grip aperture with respect to object size.
+  3. Representation of traces demonstrating the scaling of maximum grip aperture with respect to object size.
 
 - Comparision of the kinematics of grasping in monkeys and humans: effect of size
 
   - Grip size in a macaque monkey and a human subject. In both species, the grasping  component is characterized by a grip size that  increases up to a maximum and then decreases towards the end of the movement. The macaque data are presented **in absolute time**, whereas those for the human participants are presented in **normalized time**, as a percentage of movement duration. 
 
-## Neurophysiology of grasping
+### Neurophysiology of grasping
 
 - Three specific areas relating to grasping
   - the primary motor cortex (`F1`)
@@ -148,18 +153,17 @@ In the situation of point contact
   - the anterior intrapartietal sulcus (`AIP`)
 
 - Performing a successful grasping action depends primarily on the integrity of the primary motor cortex (`F1`)
-- 
 
-## Neural circuits for grasping in monkeys and humans 
+### Neural circuits for grasping in monkeys and humans 
 
 - Plenty of  evidences show that, grasping circuit involving several areas in the monkey brain, but don't know if there is a similar circuit exits in humans 
 - For ethical reasons, we can't test it in normal human. So the most studies come from the patients with brain damage and neuroimaging experiments.
 
-## The neuropsychology of grasping 
+### The neuropsychology of grasping 
 
 - in reach-to-grasp experiment, the finger grip aperture of patients with brain damage (optic ataxia) was abnormally large, and the usual correlation between maximum grip aperture and object size are missing.
 
-## Tactile sensing in human hands
+### Tactile sensing in human hands
 
 - Tactile sensing is important for all manipulation tasks
 
