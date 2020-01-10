@@ -319,7 +319,7 @@ Motion (sentence) as sequences of poses (words)
 >  - Human were asked to perform grasp 57 kinds of objects with imaging
 >  - Result:
 >     	- Considering only the first two principal components, 80% of the variance in the data can be represented.
->     	- Using the first threee principal components, 97% of the variance can be represented
+>         	- Using the first threee principal components, 97% of the variance can be represented
 >  - This suggests a significant reduction in the number of degrees of freedom (DOF) from 15 to 2 or 3
 >  - The study shows also that there were also many instances in which pairs of joint angles were only poorly correlated, suggesting that there are more than two effective degrees of freedom for the control of hand posture and that several higher-orer PCs would also be needed to represent this rather limited co-variation in joint angles
 >  - There are two alternative solutions to this paradoxical result:
@@ -403,6 +403,12 @@ Motion (sentence) as sequences of poses (words)
 ### Implementation of Synergies in Robotics
 @todo
 > Christopher Y. Brown and Harry Asada. Inter-Finger Coordination and Postural Synergies in Robot Hands via Mechanical Implementation of Principal Components Analysis, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), (2007)
+>
+> - Principal components analysis (PCA) lets us rewrite the posture matrix as the product of two smaller matrics:
+>   - one matrix consisting of the principal components vectors 
+>   - one matrix consisting of the weights for those vectors
+> - Goal: find a way to realize this equation through mechanical means
+> - 具体部分还是看计算题部分。
 
 > c3
 ### The TUAT/Karlsruhe Humanoid Underactuated Hand
