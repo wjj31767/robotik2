@@ -1,7 +1,3 @@
----
-
----
-
 [toc]
 
 # Grasping
@@ -36,39 +32,27 @@ In the situation of point contact
 - **Soft contact**: Allows the finger to exert a pure torsional moment about the common normal at the point of contact
 ### grasp hypotheses
 
-@ todo
-
- > **Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014**
- >
- > - Aspects that influence the generation of grasp hypotheses
- >  - Prior object knowledge
- >     - known
- >     - unknown
- >     - familiar
- >   - Object-grasp representations
- >     - local
- >     - global
- >   - object features
- >     - multi-modal
- >     - 3D
- >     - 2D
- >   - Grasp synthesis
- >     - analysis
- >     - data-driven
- >   - Task
- >   - Hand kinematics
- >     - gripper
- >     - multi-fingered
- > - Classification of the different approaches
- >   - Prior knowledge
- >     - know object 
- >       - use various grasp planning methods
- >     - familiar object
- >       - reuse grasp knowledge from known class members for new object
- >     - unknown object
- >       - multi sensor fusion, pushing the object
-
-### Object classes 
+[@paper](Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014)
+- Aspects that influence the generation of grasp hypotheses
+  - Prior object knowledge
+     - known
+     - unknown
+     - familiar
+  - Object-grasp representations
+     - local
+     - global
+  - object features
+     - multi-modal
+     - 3D
+     - 2D
+  - Grasp synthesis
+     - analysis
+     - data-driven
+  - Task
+  - Hand kinematics
+    - gripper
+    - multi-fingered
+### Object classes (Classification of the different approaches)
 - **Known objects**(Grasp planning is always about known objects)
     - Known object geometry (we have a complete geometric object model)
     - Approach: Use various grasp planning methods(only for known objects)
@@ -95,10 +79,7 @@ In the situation of point contact
 
 ## Grasping in Humans
 ### Neuroscience of grasping
-- [ ] TODO
-
-> Umberto Castiello. The neuroscience of grasping, Nature Rev. Neurosci. 5, 726-736(2005)
->
+[@paper](Umberto Castiello. The neuroscience of grasping, Nature Rev. Neurosci. 5, 726-736(2005))
 > This review examines one of these actions -- grasping
 
 - Precision and Power grips
@@ -119,14 +100,13 @@ In the situation of point contact
   - Evidence from lesion and neuroimaging studies in humans is compared with neurophysiological studies in monkeys
 
 ### Kinematics of grasping
+[@paper]( Jeannerod, M. in Attention and Performance IX (eds Long, J. & Baddeley, A.) 153–168 (Erlbaum, Hillsdale, 1981). This paper was the first to characterize kinematically the reach-to-grasp movement in humans. This seminal work laid the foundation of much of our current understanding of grasping. Jeannerod, M. The timing of natural prehension movements. J. Mot. Behav. 16, 235–254 (1984).)
 
 - kinematics consider 
   - movement in terms of position
   - displacement (angular and linear) of body segments
   - center of gravity
   - acceleration and velocities of the whole body or segments of the body.
-
-> Jeannerod, M. in Attention and Performance IX (eds Long, J. & Baddeley, A.) 153–168 (Erlbaum, Hillsdale, 1981). This paper was the first to characterize kinematically the reach-to-grasp movement in humans. This seminal work laid the foundation of much of our current understanding of grasping. Jeannerod, M. The timing of natural prehension movements. J. Mot. Behav. 16, 235–254 (1984).
 
 - Jeannerod coded grasping in terms of changes in grip aperture
   - Definition: grip aperture is the separation between the thumb and the index finger
@@ -181,33 +161,35 @@ In the situation of point contact
   
 
 ### Haptics in human grasping
-~~c3 37~~
+- features
+  - Grasping object heavily depends on haptic perception
+  - Different tactile receptors are activated during grasping phases
+  - Grip force is controlled by need load force
+  - Slip is detected and prevented
+
 [Screenshot-2019-12-30-at-19-50-24.png](https://postimg.cc/sBJQdqsC)
 
-`c3 38-39`
+- **reach phase**: 
+  - object is approached
+  - hand in grasping pre-shape
+  - control based on vision
+  - finger makes contact
+    - tactile: high frequency vibrations
+- **load phase**:
+  - fingers are closed
+  - tangential load force is increased
+  - grip force is adjusted accordingly to prevent finger slip
+  - object breaks contact with support surface
+    - tactile: high frequency vibrations
+- **lift phase**:
+  - grip force is controlled to prevent slip
+  - object if lifted from the surface
+  - object has reached desired height
+    - visual
+- **replace phase**:
+- humans use feed forward control to predict sensory input 
+- When prediction mismatches actual input corrective actions are taken
 
-- @to do 
-
-  - **reach phase**: 
-    - object is approached
-    - hand in grasping pre-shape
-    - control based on vision
-    - finger makes contact
-      - tactile: high frequency vibrations
-  - **load phase**:
-    - fingers are closed
-    - tangential load force is increased
-    - grip force is adjusted accordingly to prevent finger slip
-    - object breaks contact with support surface
-      - tactile: high frequency vibrations
-  - **lift phase**:
-    - grip force is controlled to prevent slip
-    - object if lifted from the surface
-    - object has reached desired height
-      - visual
-  - **replace phase**:
-  - humans use feed forward control to predict sensory input 
-  - When prediction mismatches actual input corrective actions are taken
 ## Grasping Taxonomies
 ### purposes
 - Benchmark to test robot hand abilities
@@ -216,71 +198,83 @@ In the situation of point contact
 - Optimization of synergies: Formulation of dexterity/functionality as number of achievable grasps for maximization
 - guide autonomous grasp selection
 ### Arten
-- Cutkosky Taxonomy
 
-  [[2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
+#### Cutkosky Taxonomy
 
-- Kamakura Taxonomy
-  - the taxonomy considers 
-  1. purpose of a grasp
-  2. hand shape
-  3. contact points with objects
-  - Category:
-	- Power Grips
-	  - Power Grip-Standard Type
-	  - Power Grip-hook Type
-	  - Power Grip-Index Extension Type
-	  - Power Grip-Extension Type
-	  - Power Grip-Distal Type
-  - Mid-Power-Precision Grips
-    - Lateral Grip
-    - Tripod Grip-Standard Type
-    - Tripod Grip-Variation I
-    - Tripod Grip-Variation II
-  - Precision Grips
-    - Parallel Mild Flexion Grip
-    - Circular Mild Flexion Grip
-    - Tip Grip
-    - Parallel Extension Grip
-  -  Thumbless 
-    - Adduction Grip      
-`c3 46 - 53`
-- **Bullock Taxonomy**: 
-	- Contact:
-		- Hand is touching an external object or the environment 
-	- Prehensile
-		- Action of hand on object must be described with more than one virtual finger 
-	- Motion
-		- Any part of the hand moves relative to body fixed frame 
-	- Within Hand
-		- Points on the hand are moving relative to the hand base frame 
-	- Motion at acontact  
-		- Object reference frame moves relative to contact point frames. 
-`c3 53` 
-@ todo
+[[2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
 
-  
+- Typical grasp motion of daily life
+  - Cylinderical grasp
+  - Tip
+  - Hook or Snap
+  - Palmar
+  - Spherical
+  - Lateral
 
-> Bullock, I.M.; Ma, R.R.; Dollar, A.M., "A Hand-Centric Classification of Human and Robot Dexterous Manipulation," IEEE Transactions on Haptics, 6(2):129-144, 2013
+#### Kamakura Taxonomy
+
+- the taxonomy considers 
+  - purpose of a grasp
+  - hand shape
+  - contact points with objects
+
+|Category|Class|
+|---|---|
+|*Power Grips*|Power Grip-Standard Type<br>Power Grip-hook Type<br>Power Grip-Index Extension Type<br>Power Grip-Extension Type <br>Power Grip-Distal Type|
+|*Mid-Power-Precision Grips*|Lateral Grip<br>Tripod Grip-Standard Type<br/>Tripod Grip-Variation I<br/>Tripod Grip-Variation II|
+|*Precision Grips*|Parallel Mild Flexion Grip<br/>Circular Mild Flexion Grip<br/>Tip Grip<br/>Parallel Extension Grip|
+|*Thumbless* |Adduction Grip|
+#### Bullock Taxonomy:
+
+- Contact:
+	- Hand is touching an external object or the environment 
+- Prehensile
+	- Action of hand on object must be described with more than one virtual finger 
+- Motion
+	- Any part of the hand moves relative to body fixed frame 
+- Within Hand
+	- Points on the hand are moving relative to the hand base frame 
+- Motion at contact  
+	- Object reference frame moves relative to contact point frames. 
+
+[Screenshot-2020-01-13-at-11-22-51.png](https://postimg.cc/SXrxq9xX)
+
+``` mermaid
+graph LR
+a[Contat/no Contat] --> b[Prehensile/ non-Prehensile]
+b -->c[motion/no motion]
+c -->d[Within/not within]
+d -->e[motion at contact/no ..]
+a-->e
+c-->e
+```
+
+[@paper](Bullock, I.M.; Ma, R.R.; Dollar, A.M., "A Hand-Centric Classification of Human and Robot Dexterous Manipulation," IEEE Transactions on Haptics, 6(2):129-144, 2013)
+
 ### Whole-body poses & Duality of grasping
-@ to do 
-- Selection of support pose -- Grasp selection
-- Selection of contact points -- Grasp synthesis
-- Classification of support pose possibilities -- Grasping taxonomies
-> T. Asfour, J. Borràs, C. Mandery, P. Kaiser, E. E. Aksoy  and  M.  Grotz  , On  the  Advanced  dualities  between  grasping  and  whole  -  body loco  -  manipulation  tasks  , Robotics Research, Springer  Proceedings  in  Robotics, Springer,  2018
 
-> J  .  Borràs  and T. Asfour, A  Whole  -  Body Pose  Taxonomy  for  Loco  -  Manipulation Tasks, IEEE/  RSJ  International Conference on  Intelligent Robots and Systems (  IROS  ), pp. 1578  -  1585,  October  , 2015
+[@paper](T. Asfour, J. Borràs, C. Mandery, P. Kaiser, E. E. Aksoy  and  M.  Grotz  , On  the  Advanced  dualities  between  grasping  and  whole  -  body loco  -  manipulation  tasks  , Robotics Research, Springer  Proceedings  in  Robotics, Springer,  2018; J  .  Borràs  and T. Asfour, A  Whole  -  Body Pose  Taxonomy  for  Loco  -  Manipulation Tasks, IEEE/  RSJ  International Conference on  Intelligent Robots and Systems (  IROS  ), pp. 1578  -  1585,  October  , 2015)
+
+- Selection of support pose -- Grasp selection
+
+- Selection of contact points -- Grasp synthesis
+
+- Classification of support pose possibilities -- Grasping taxonomies
+
 - Duality of grasping and balancing
+
 - Whole body poses in loco manipulation tasks
 	- Given: humanoid, task and scene and its affordances:
 		- How many poses can be realized?
 		- Which pose should be selected?
 		- How to realize it ? palnning, control  
+	
 - Towards a taxonomy of whole body support poses
 	- Criteria for classification:
 		-  number of contacs: relevant for balance conditions/ control
 		-  type of contacts: determine the mobility (DOFs) and the transmission of contact forces
 		- possible transitions: We only allow one contact change at time 
+	
 - Type of contacts
 	- Type of contact with arms:
 		- tips
@@ -292,30 +286,54 @@ In the situation of point contact
 		-  tip-toes
 		- feet
 		- knees 
+	
 - Taxonomy of whole body poses
    - total: 46 classes 
    - 18 standing poses
    - 18 kneeling poses
    - 10 resting poses
+   
 - Classification of whole body actions
 	- Type I: Actions to change the envrionment
+	
+	  one support pose is selected to perform the **manipulation**
+	
 	- Type II: Actions to change the body 
+	
+	  succession of support poses to allow **locomotion** or **balancing**
+	
 	- Type III: Combination of I and II
+	
 - Validation of the taxonomy
+
 - Analysis of pose transitions
+
 - benefits:
    - Generate whole body multi-contact pose sequences
    - Novel statistical approach for planning multi contact motions based on the taxonomy knowledge extracted from observing human motions
    - Representation of motions as a sequence of poses(stance planning)
-- Statistical modelling of pose @todo `c3 77-78`
-   - **n-gram model**: probabilities of pose transitions
-   - Linguistic approach
-- Language model to generate multi-contact motions @todo `c3 79`
+   
+- Statistical modelling of pose
+  - Arten
+  both from the support pose sequences extracted by segmentation of human motion data
+    - Modelling of pose transition probalities using **n-gram model**(describes ***probabilities of pose transitions***)
+     $ P(p_t|(p_{t-4},p_{t-3},p_{t-2},p_{t-1})) (N = 5)$
+    - Modelling of the average **center of mass displacement** for the execution of a given pose transition
+  - Linguistic approach(alphabet of motion)
+    - Starting point: **Textual representation** of pose sequences 
+  
+- Language model to generate multi-contact motions
 Motion (sentence) as sequences of poses (words)
+  
+    - **n-gram language model**: Statistical approach to learning conditional transition probalities between whole-body shap poses
+    - Language model lernend from motion capture data(segmented poses)
+    - Spatial translation model
+      - considers only transltion along one coordinate axis(valid for walking in a straight line)
+      - Average from all observed instances of a certain translation
 ### Postural Synergies 
 - Definition: Postrual synergies are the correlation of degrees of freedom in patterns of more frequent use.
-@todo 
-> Marco  Santello  , Martha Flanders, John F.  Soechting  .  Postural Hand Synergies for  Tool Use  , The Journal of Neuroscience, 18(23): 10105  -  10115 (1998)
+[@paper](Marco  Santello  , Martha Flanders, John F.  Soechting  .  Postural Hand Synergies for  Tool Use  , The Journal of Neuroscience, 18(23): 10105  -  10115 (1998))
+
 >  - Human were asked to perform grasp 57 kinds of objects with imaging
 >  - Result:
 >     	- Considering only the first two principal components, 80% of the variance in the data can be represented.
@@ -373,57 +391,48 @@ Motion (sentence) as sequences of poses (words)
 >   - Experiment 
 >     - Associate each postural synergy through a numerical model of hand and object compliance to a contact force pattern
 ### Eigengrasps
-@todo
-> Matei Ciocarlie, Corey Goldfeder, Peter Allen. Dimensionality reduction for hand-independent dexterous robotic grasping, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), (2007)
->
-> - coined the term "eigengrasps"
->
-> - Problem of grasp planning:
->
->   - need known object, but known object always limited
->   - can treated as optimization problem:
->   - solving 27 dof problem:
->     - 6 dof space
->     - 21 hand dof
->
-> - Idea of eingengrasps:
->
->   - Use 2 synergies instead of 21 Dof of hand 
->   - 27 dof reduced to 8
->
-> - further thoughts (drawbacks):
->
->   - 2 synergies not necessary lead to hand configurations 
->     - This is in line with the findings that the higher synergies are not simply noise but do in fact represent detail of the objects' shape
->     - **Solution**: 
->       - After a fixed amount of interations, stop the optimization process and close the finger joints until contact to the object prevent further motion
->
->   - The algorithm does not work well with non-convex objects
+[@paper](Matei Ciocarlie, Corey Goldfeder, Peter Allen. Dimensionality reduction for hand-independent dexterous robotic grasping, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), (2007))
+
+ - coined the term "eigengrasps"
+
+ - Problem of grasp planning:
+
+   - need known object, but known object always limited
+   - can treated as optimization problem:
+   - solving 27 dof problem:
+     - 6 dof space
+     - 21 hand dof
+
+ - Idea of eingengrasps:
+
+   - Use 2 synergies instead of 21 Dof of hand 
+   - 27 dof reduced to 8
+
+ - further thoughts (drawbacks):
+
+   - 2 synergies not necessary lead to hand configurations 
+     - This is in line with the findings that the higher synergies are not simply noise but do in fact represent detail of the objects' shape
+     - **Solution**: 
+       - After a fixed amount of interations, stop the optimization process and close the finger joints until contact to the object prevent further motion
+
+   - The algorithm does not work well with non-convex objects
 
 ### Implementation of Synergies in Robotics
-@todo
-> Christopher Y. Brown and Harry Asada. Inter-Finger Coordination and Postural Synergies in Robot Hands via Mechanical Implementation of Principal Components Analysis, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), (2007)
->
-> - Principal components analysis (PCA) lets us rewrite the posture matrix as the product of two smaller matrics:
->   - one matrix consisting of the principal components vectors 
->   - one matrix consisting of the weights for those vectors
-> - Goal: find a way to realize this equation through mechanical means
-> - 具体部分还是看计算题部分。
+[@paper](Christopher Y. Brown and Harry Asada. Inter-Finger Coordination and Postural Synergies in Robot Hands via Mechanical Implementation of Principal Components Analysis, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), (2007))
 
-> c3
+- Principal components analysis (PCA) lets us rewrite the posture matrix as the product of two smaller matrics:
+   - one matrix consisting of the principal components vectors 
+   - one matrix consisting of the weights for those vectors
+ - Goal: find a way to realize this equation through mechanical means
+ - 具体部分还是看计算题部分。
+
 ### The TUAT/Karlsruhe Humanoid Underactuated Hand
 
-@todo
-> Naoki Fukaya, Tamim Asfour  ,  Rüdiger Dillmann  and Shigeki Toyama,  Development of a Five  -  Finger Dexterous Hand without Feedback control: the  TUAT  Intelligent Robots and Systems  /Karlsruhe Humanoid Hand  ,  IEEE/RSJ International Conference on  (  IROS  2013)
-
-> Weiner, P., Starke, J., Hundhausen, F., Beil, J. and Asfour, T.,  The KIT Prosthetic  Hand: Design and Control  , IEEE/RSJ International Conference on Intelligent  Robots and Systems (IROS), pp. 3328  -  3334, October, 2018
-
-> c3
-
+[@paper](Naoki Fukaya, Tamim Asfour  ,  Rüdiger Dillmann  and Shigeki Toyama,  Development of a Five  -  Finger Dexterous Hand without Feedback control: the  TUAT  Intelligent Robots and Systems  /Karlsruhe Humanoid Hand  ,  IEEE/RSJ International Conference on  (  IROS  2013); Weiner, P., Starke, J., Hundhausen, F., Beil, J. and Asfour, T.,  The KIT Prosthetic  Hand: Design and Control  , IEEE/RSJ International Conference on Intelligent  Robots and Systems (IROS), pp. 3328  -  3334, October, 2018)
 #### Underactuation
 
 **Underactuation** expresses the property of a system to have an input vector of smaller dimension than the output vector
-
+#### The TUAT/Karlsruhe Humanoid Hand
 - In robotic, it means having fewer actuators then degrees of freedoms(DoF)
   - Simple control
   - Adapt to the shape of the object
@@ -442,17 +451,30 @@ Motion (sentence) as sequences of poses (words)
   (cylinderical grasp, tip, hook or snap, palmer, spherical, lateral)
 
 - Latest version(2013)
-  
-- `c3 136` + `Development of a Five-F Dexterous Hand without Feedback control:`
-  
-- The KIT prosthetic hand 
+  - Cutkosky's taxonomy
+  - one large servo motor and 6 small auxilliary servo motors 
+  - needs no feedback control, touch sensor and complex control system
+  - easy operation
+#### The KIT prosthetic hand 
 Personalised prosthetic hands with semi-autonomous grasping abilities
-  - The KIT Prosthetic Hand: Design and Control
-  - ~~male and female prosthetic hands c3 s145~~
-  - ~~Hand Design~~
-
-
-
+- Design
+  - scalable in all dimensions according to the able hand
+  - 10 degrees of freedom
+  - new mechanism
+    - smaller design
+    - the mechanism still allows for adaptive underactuation
+    - an additional tackle pulley allows to reduce the motor gear reduction stages
+- ~~control~~
+- Sensor system:
+  - distance Sensor
+    - time of flight distance sensing
+    - allows to estimate the distance to the image plane
+  - Camera
+  in the base of the thumb
+  - IMU
+    - allows to estimate the prosthessi pose
+    - can be used as an user input device
+  - RGB Colour Display
 
 ## Grasping Known, Familiar and Unknown Objects
 
@@ -732,13 +754,17 @@ generative approaches are straight forward when it comes to deep learning for gr
 discriminative approaches rate a grasp hypothesis according to sensor data
    - Idea/approach
    [Screenshot-2020-01-03-at-20-40-50.png](https://postimg.cc/FkVJLWLs)
-      - neural network estimates the quality of a grasp based on incomplete information(Training data has to contain positive and negative training samples)
-      - assumption: Network will learn to internally complete the missing information
-      - common network architecture
-      [Screenshot-2020-01-03-at-20-42-12.png](https://postimg.cc/7fQSMRRf)
-      -  ~~Example from Schmidt et al. : c3 241~~
-      - @todo c3 242
-- heat maps
+    - neural network estimates the quality of a grasp based on incomplete information(Training data has to contain positive and negative training samples)
+    - assumption: Network will learn to internally complete the missing information
+  - common network architecture
+  [Screenshot-2020-01-03-at-20-42-12.png](https://postimg.cc/7fQSMRRf)
+  -Example of approach:
+    - gernrate grasp hypothesis/candidates
+    - score candidates with grasp quality CNN
+    - select best-rated grasp candidate for execution
+    - (Use Gripper-specific approach to generate grasp candidates)
+    - (Mostly approached by hand crafted classical algorithms)
+- Heat maps
 Heat map based approaches map images to images
    - Idea/Approach
    [Screenshot-2020-01-03-at-20-54-26.png](https://postimg.cc/0KCjXzZ8)
@@ -748,4 +774,7 @@ Heat map based approaches map images to images
    - common network architecture
    [Screenshot-2020-01-03-at-20-54-26.png](https://postimg.cc/0KCjXzZ8)
    - Example 
-   @todo c3 244-246
+      - Input data is represented as multiple modalities from RGB-D image
+        - Original RGB image, depth image, ground truth affordance
+        - HHA encoding: Horizontal disparity, Height above ground, Angle with gravity
+      - The CNN makes use of an encoder-decoder architecture and produces a k channel image of probabilities, where k is the number of affordance classes
