@@ -1,4 +1,7 @@
+[toc]
+
 # Imitation Learning
+
 learning from human observation
 - Imitation is an advanced behaviour whereby an individual observes and replicates another's behaviour.
 ## different viewpoints of Imitation learning
@@ -108,11 +111,34 @@ to capture and reconstruct whole-body **and** objects motions
       - Computer vision problem
       - new sensors
 ### The Master Motor Map(MMM)
-@todo 
->c2
-- Unifying framework for capturing, representation, visualization and whole body human motion and mapping/converting to different embodiments
-- Data from stereobased markerless human motion capture system
+**Unifying framework** for capturing, representation, visualization and whole body human motion and mapping/converting to different embodiments
+#### Goal: 
+- offer an unified representation of bodies models to design humanoid robots
+- Reference model of the human body
+  - for humanoid robot design
+  - Imitation of human actions
+  - Action recognition
+  - Visualization of human movements
+- *Interfaces and data structures* for the *transfer of motor knowledge* between different embodiments
+#### Models:
+- **Kinematic model**: joints and segment lengths
+  - Kinematic model of the human shoulder-arm system: 
+    - 9 DOF 
+    - Shoulder: 5 DOF
+    - Elbow: 2 DOF 
+    - Wrist: 2 DOF
+- **Dynamic model**: 
+  - segment mass 
+  - center of mass
+  - moments of inertia
+- **Statistic/anthropomorphic model**: Segment properties(e.g. length, mass etc.) defined as a function(regression) of global parameters(e.g. body height, weight)
+#### Motion reproduction using MMM:
+- Data from stereo based markerless human motion capture system
 - Data from VICON system(SFB 588)
+#### How to use MMM:
+Replacement of any module(perception, recognition, visualization, reproduction) can be guaranteed by using the MMM as the exchange format
+ - All perceptive modules convert their output to the MMM format
+ - All recognition and reproduction modules convert the MMM format to their specific internal representation
 ### Human Motion Capture(HMC) -- markerless
 - the system operates on a simplified 3D human model
 - Output is a sequence of configuration vectors of this model, one for each frame
@@ -242,6 +268,7 @@ Local minimum and maximum and also pauses
    --> Aggregators have little influence
 
 [Screenshot-2020-01-08-at-14-12-53.png](https://postimg.cc/xcWxqpdB)
+
 - Features
 Able to classify segment points of unknown primitives
 - Restrictions
@@ -263,7 +290,7 @@ Able to classify segment points of unknown primitives
    - example: In speech sounds are known; syllables are hidden
 - suitable for the classification of **time series data**, such as speech or gestures signals
 ##### One HMM contains:
-- States S~i~
+- States **S~i~**
 - Transition probabilities a~ij~
 - Start probabilities π~ij~
 - Observation probabilities b~i~ for each state S~i~
@@ -279,10 +306,20 @@ Given an observation sequence O = O~1~ ,..., O~n~ and a model λ
 How to find a corresponding state sequence S = S~1~ , ... ,S~n~ which is optimal in some sense
 - Baum-Welch-Algorithm:
       -How to adjust the model parameters λ(**training of the HMM**) to maximize P(O|λ)
-##### ~~Approach with Hidden Markov Models c5 s73~~  
+
 ##### Approach
-@todo
->T. Asfour et al. (2006, 2008). Imitation Learning of Dual-Arm Manipulation Tasks in Humanoid Robots. International Journal on Humanoid Robots, 2008. (International Conference on Humanoid Robots, 2006)
+
+``` mermaid
+graph LR
+A[Approach with Hidden Markov Model] --> B[Perception and analyse]
+B-->C[Generalization]
+C-->D[Reproduction]
+```
+
+(Model-based Imitation of arm movements)
+
+[@paper](T. Asfour et al. (2006, 2008). Imitation Learning of Dual-Arm Manipulation Tasks in Humanoid Robots. International Journal on Humanoid Robots, 2008. (International Conference on Humanoid Robots, 2006))
+
 - steps:
    - Imitation learning process based on multiple demonstrations
    - HMM **for recognition and reproduction** of the motion
@@ -364,7 +401,9 @@ Sensorimotor transformation model for human-like arm positions
     - Perfect imitation
        - absolutely same relation **R** to an object
        - similar arm posture
+
 ##### Incorporating the goals in the reproduction
+
 HMMs are nice because they account both the reproduction and classification, but we need to account also for the goals of an action and other types of control than feed-forward control 
 - Adaptation of movements to the given situation
 - Interpolation between movements in a motion library
@@ -380,34 +419,37 @@ HMMs are nice because they account both the reproduction and classification, but
 [Screenshot-2020-01-08-at-17-13-23.png](https://postimg.cc/30JTpTv9)
 
 ---
-#### Task Segmentation  on Object Hand Relations(Hierarchical Segmentation
-##### Capturing of the human demonstration
+### Task Segmentation  on Object Hand Relations(Hierarchical Segmentation)
+
+#### Capturing of the human demonstration
 - Human motion capturing with VICON
 - The agent and all objects have several **markers** attached
 - All markers are **labeled** and **grouped** by the attached object
 - Extraction of marker trajectories
-##### Action Segmentation
-###### Idea
+
+#### Action Segmentation
+
+##### Idea
   - Use **contact/non-contact relations** to segment the action, i.e. to et important key frames out of object interactions
   - Cartesian distance of markers employed to **detect contact and key frames**
   - Resulting in segmentation of an action sequence into several **action primitives**(unlabelled)
      - Example: "Preparing a dough" is divided into grasping, pouring, placing etc.
   - **Object relations** support the extraction of **general pre/postconditions** of an action primitive(such as: LeftHand touches RedCup)
-###### ~~World state and pre/postconditions~~
+##### ~~World state and pre/postconditions~~
 
-###### Detection contact between hand and object
+##### Detection contact between hand and object
 vision--> difficult ; haptics-->require contact sensors
    - Mapping of marker representation into geometric model representation
       - 3D mesh model for all objects with virtual markers
       - Registration or recorded markers with virtual markers for 6D pose estimation
       - 6D trajectories analysed by mesh collision detection algorithms
 
-###### Marker-based Motion Capture to 6D Object Trajectories
+##### Marker-based Motion Capture to 6D Object Trajectories
    - Recordings of **action sequences** with marker-based motion capture
    - Conversion to **6D object pose trajectories** with simplified MMM models
    - **Input** for segmentation algorithm
 
-###### Hierarchical Action Segmentation
+##### Hierarchical Action Segmentation
 extension of previous semantic segmentation
    - motivation: Semantic segmentation provides relevant information about key frames but ***actions without observable effects cannot be detected***
    - Segmentation of human demonstration on two levels
@@ -428,10 +470,10 @@ extension of previous semantic segmentation
       f: false positives
       p: penalty
       -~~others c5 s121~~ 
-###### Evaluating Motion Segmentation Algorithms
+##### Evaluating Motion Segmentation Algorithms
    - **Open source framework to evaluate motion segmentation algorithms**
    - Novel way to assess the quality of the segmentation of human motion recordings, called the **Integrated Kernel** approach
    - the **Motion Segmentation Point Hierarchy** to discriminate different granularities on which motion segmentation algorithms operate
    - Includes labelled datasets and algorithms from the literature
-###### ~~Others c5 s125-140~~
+##### ~~Others c5 s125-140~~
 ---
