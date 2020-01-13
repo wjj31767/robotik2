@@ -75,7 +75,7 @@
 
 - Generate initial object hypotheses based on camera images
 - Three heuristics:
-  - planes, cylinders and spheres amongst SIFT features(RANSAC)
+  - planes, cylinders and spheres amongst SIFT(RANSAC) features(Scale-Invariant Feature Transform)
     --> textured objects
   - Unicoloured regions of promising size(colour MSERs(Maximally stable extremal regions)) 
     --> single-coloured objects
@@ -109,7 +109,7 @@
 
 - after pushing: Re-localize object hypotheses
   - use point cloud matching to re-localize object and estimate motion
-  - textured objects: match SIFT features
+  - textured objects: match SIFT features (Scale-Invariant Feature Transform)
 - object hypotheses represented by sets of RGBD points
 - for each hypothesis: estimate motion
   - if it didn't move, ignore it
@@ -161,10 +161,7 @@ Iterative Closest Point for matching, using a distance in cartesian and colour s
     -->complete segmentation
   - more pushes reveal different sides
     --> generate a multi-view descriptor
-    @todo
-
-> D. Schiebener , A. Ude and T. Asfour, Physical Interaction for Segmentation of Unknown Textured and Non - textured Rigid Objects , IEEE International Conference on Robotics and Automation (ICRA), 2014
-
+[@paper](D. Schiebener , A. Ude and T. Asfour, Physical Interaction for Segmentation of Unknown Textured and Non - textured Rigid Objects , IEEE International Conference on Robotics and Automation (ICRA), 2014)
 ### related work
 
 ~~c4 s61-67~~
@@ -214,24 +211,41 @@ Iterative Closest Point for matching, using a distance in cartesian and colour s
    - contour following(global shape)(exact shape)
 
 ### Haptic exploration
-
- @todo
-
- >Bierbaum, A., Rambow , M., Asfour, T., Dillmann, R. Grasp Affordances from Multi - Fingered Tactile Exploration using Dynamic Potential Fields. In IEEE/RAS International Conference on Humanoid Robots, 2009.
+- haptic exploration can only be active
+- six manual "exploratory procedures" and their associated object properties
+  - Lateral Motion / Texture
+  - Pressure / Hardness
+  - Static Contact / Temperature
+  - Unsupported Holding / Weight
+  - Encloseure / Global Shape / Volume
+  - Contour Following / Global Shape / Exact Shape
+- important things
+  - Haptic sensor technologies
+  - Object shape estimation based on collected sparse haptic data
+  - Application, e.g. grasping unknown objects
+  [Screenshot-2020-01-12-at-21-58-39.png](https://postimg.cc/MnnDns0H)
+[@paper](Bierbaum, A., Rambow , M., Asfour, T., Dillmann, R. Grasp Affordances from Multi - Fingered Tactile Exploration using Dynamic Potential Fields. In IEEE/RAS International Conference on Humanoid Robots, 2009.)
 
 ### Potential Field Based Exploration
 
-@todo
-
->Bierbaum, A., Rambow, M., Asfour, T., Dillmann, R. Grasp Affordances from Multi-Fingered Tactile Exploration using Dynamic Potential Fields. In IEEE/RAS International Conference on Humanoid Robots, 2009.
+[@paper](Bierbaum, A., Rambow, M., Asfour, T., Dillmann, R. Grasp Affordances from Multi-Fingered Tactile Exploration using Dynamic Potential Fields. In IEEE/RAS International Conference on Humanoid Robots, 2009.)
 
 - Method originally developed for Motion planning and Mobile robot SLAM
 
 #### Exploration using dynamic potential fields
-
-@todo
-
->c4 s80-81
+- Fielder gradient direction (in operational space)
+  - Unknow regions --> attractive  $\phi_a < 0$
+  - Known regions --> repellent $\phi_r > 0$
+- Dynamic adaptation of potential fiel configuration from tactile response
+- Superposiotn of individual potential sources
+$\ phi(x) = \sum_i phi_{r,i}(x) + \sum_j phi_{a,j}(x)$
+- Field initialization from pose and extension estimation of target objetct, e.g. by computer vison
+- Steps:
+  - Generation of trajectories for multi-point end-effectors(Robot Control Points, RCPs) using real-time gradient calculation
+  - Harmonic potential functions to minimize number of local minima
+  - Reconfiguration strategy for resolving structural local minima of the hand
+  - Real-time inverse kinematics using Virtual Model Control(VMC)
+  - Result: Oriented 3D point set with irregular density 
 
 ### Haptic Exploration with Movemaster
 
@@ -287,34 +301,46 @@ how to maximize information gain during haptic exploration?
 
 #### Next-Best-Touch for Tactile Exploration
 
-@todo
-
->Ottenhaus, S., Kaul, L., Vahrenkamp, N. and Asfour, T., Active Tactile Exploration Based on Cost-Aware Information Gain Maximization, International Journal of Humanoid Robotics, vol. 15, no. 1, pp. 1-21, 2018
+[@paper](Ottenhaus, S., Kaul, L., Vahrenkamp, N. and Asfour, T., Active Tactile Exploration Based on Cost-Aware Information Gain Maximization, International Journal of Humanoid Robotics, vol. 15, no. 1, pp. 1-21, 2018)
 
 - State-of-the-art: Gaussian process variance(GP-V)
+
+  Maximize($\Delta$Information)
+
   - Maximize information
   - Ignore path cost
+
 - Tactile exploration @ H2T
-  - Information Gain Estimation Function(IGEF)
-  - Minimize uncertainty
-  - Minimize path cost
-  - Maximize locality
+  
+  Information Gain Estimation Function(IGEF)
+  
+  Maximize$\frac{\Delta Information}{\Delta Cost}$
+  
+  - Minimize **uncertainty**:Explore unknown regions
+  - Minimize **path cost**:path cost in distance and rotation
+  - Maximize **locality**:Prefer exploration targets that are in proximity of explored regions
+  
+##### Plan Exploration Actions Efficiently
+| Symbol | Description |
+|---|---|
+|$x ; x_n$|Query position; normal|
+|$r; r_n$|Current position; normal|
+|$c \in C$|Set of explored points|
+|$\sigma,\mu$|Scaling factors|
+  - **Maximize $\Delta$ information**: Reduce uncertainty
+    $$ \Psi_1(x)=\min_{c \in C}\left(1-exp\left(-\frac{||x-c||^2}{\sigma^2}\right)\right)$$
+    
+  - **Stay local**: Prefer targets, that are close
 
-##### Plan Exploration Actions Efficiently 
+    $$ \Psi_2(x)=exp\left(-\frac{(||x-c||-\mu)^2}{\sigma^2}\right)$$
 
-@todo 
-
-> c4 s96
-
-- Symbol
-- function
+  - **Minimize path cost**: Minimize movement and rotation of the hand
+    $$\Psi_{3,pos}(x)=\frac{1}{||Path(r,x)||}$$  $$\Psi_{3,rot}(x)=exp\left(-\frac{sin^2(\frac{1}{2}arccos(r_n\cdot x_n)}{\sigma^2}\right)$$
+  - **Resulting Function**:
+    IGEF: $\Psi = \Psi_1 \cdot \Psi_2 \cdot \Psi_{3,pos} \cdot \Psi_{3,rot}$
 
 ##### Summary
 
-- different goals during exploration(IGEF)
-  - Uncertainty: Explore unknown regions
-  - Cost: Minimize path cost in distance and rotation
-  - Locality: Prefer exploration targets that are in proximity of explored regions
 - difference between GP-V and IGEF
   - GP-V is greedy --> large steps
   - IGEF stays local --> smaller steps
@@ -327,24 +353,38 @@ how to maximize information gain during haptic exploration?
 
 #### Exploration and Reconstruction of Unknown Objects using Normal and Contact Sensors
 
-@todo 
-
-> c4 s106-107
+- Benefits:
+  - Use IMUs and pressure sensor in order to get surface orientation in a wide range
+  - Simultaneously, measure contact force
+  - Allows the reconstruction of surface of unknown objects
+  - Accurate for big objects and coarse surfaces
 
 ## Active Hearing
 
-@todo
-
->c4 s109-112
-
 - Fundamental questions in active hearing
+
+  - What are the spatial filtering properties of the recording system
+  - How does the environment transform the signal(e.g. pulse responses)
+  - Does the robot produce self-noise
+
 - Approach using Sound source localization (modified)
+
+  [Screenshot-2020-01-13-at-10-09-00.png](https://postimg.cc/9wfPM4zQ)
+
 - further research topics
 
-**Anthropomatics** is the science of the symbioses between human and machine
-**Why humanoids?** 
+  - Auditory Scene analysis
 
-- Versatility 
-- Better Prediction of robot actions
-- Acceptance
-- Building Humanoids = Building Human-Centred Technologies 
+    How to identify / separate different sound sources
+
+    (Talking to other persons in a noisy room)
+
+  - Soud Understanding
+
+    Use knowledge of perceived signal
+
+    (human voice, phone bell, door knocking)
+
+  - Sound Reasoning
+
+    Use the sound signal to reason about the enviroment of the sound source (echo)
