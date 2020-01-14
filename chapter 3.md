@@ -34,24 +34,12 @@ In the situation of point contact
 
 [@paper](Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014)
 - Aspects that influence the generation of grasp hypotheses
-  - Prior object knowledge
-     - known
-     - unknown
-     - familiar
-  - Object-grasp representations
-     - local
-     - global
-  - object features
-     - multi-modal
-     - 3D
-     - 2D
-  - Grasp synthesis
-     - analysis
-     - data-driven
+  - Prior object knowledge (known/ unknown/ familiar)
+  - Object-grasp representations (local/ global)
+  - object features (multi-modal/ 3D/ 2D)
+  - Grasp synthesis(analysis/ data-driven)
   - Task
-  - Hand kinematics
-    - gripper
-    - multi-fingered
+  - Hand kinematics(gripper/ multi-fingered)
 ### Object classes (Classification of the different approaches)
 - **Known objects**(Grasp planning is always about known objects)
     - Known object geometry (we have a complete geometric object model)
@@ -192,11 +180,13 @@ In the situation of point contact
 
 ## Grasping Taxonomies
 ### purposes
+
 - Benchmark to test robot hand abilities
 - Simplify grasp synthesis
 - Inspire hand design
 - Optimization of synergies: Formulation of dexterity/functionality as number of achievable grasps for maximization
 - guide autonomous grasp selection
+
 ### Arten
 
 #### Cutkosky Taxonomy
@@ -204,12 +194,8 @@ In the situation of point contact
 [[2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
 
 - Typical grasp motion of daily life
-  - Cylinderical grasp
-  - Tip
-  - Hook or Snap
-  - Palmar
-  - Spherical
-  - Lateral
+  
+  Cylinderical grasp  /  Tip  /  Hook or Snap  /  Palmar  /  Spherical  /  Lateral
 
 #### Kamakura Taxonomy
 
@@ -277,11 +263,8 @@ c-->e
 	
 - Type of contacts
 	- Type of contact with arms:
-		- tips
-		- fingers
-		- palm
-		- arm
-		- hold
+		
+		tips  /  fingers  /  palm  /  arm  /  hold
 	- type of contacts with legs
 		-  tip-toes
 		- feet
@@ -401,12 +384,12 @@ Motion (sentence) as sequences of poses (words)
    - can treated as optimization problem:
    - solving 27 dof problem:
      - 6 dof space
-     - 21 hand dof
+     - 21 hand DoF
 
  - Idea of eingengrasps:
 
-   - Use 2 synergies instead of 21 Dof of hand 
-   - 27 dof reduced to 8
+   - Use 2 synergies instead of 21 DoF of hand 
+   - 27 DoF reduced to 8
 
  - further thoughts (drawbacks):
 
@@ -424,14 +407,16 @@ Motion (sentence) as sequences of poses (words)
    - one matrix consisting of the principal components vectors 
    - one matrix consisting of the weights for those vectors
  - Goal: find a way to realize this equation through mechanical means
- - 具体部分还是看计算题部分。
+ - Calculation
 
 ### The TUAT/Karlsruhe Humanoid Underactuated Hand
 
 [@paper](Naoki Fukaya, Tamim Asfour  ,  Rüdiger Dillmann  and Shigeki Toyama,  Development of a Five  -  Finger Dexterous Hand without Feedback control: the  TUAT  Intelligent Robots and Systems  /Karlsruhe Humanoid Hand  ,  IEEE/RSJ International Conference on  (  IROS  2013); Weiner, P., Starke, J., Hundhausen, F., Beil, J. and Asfour, T.,  The KIT Prosthetic  Hand: Design and Control  , IEEE/RSJ International Conference on Intelligent  Robots and Systems (IROS), pp. 3328  -  3334, October, 2018)
+
 #### Underactuation
 
 **Underactuation** expresses the property of a system to have an input vector of smaller dimension than the output vector
+
 #### The TUAT/Karlsruhe Humanoid Hand
 - In robotic, it means having fewer actuators then degrees of freedoms(DoF)
   - Simple control
