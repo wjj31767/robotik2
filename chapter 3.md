@@ -7,7 +7,7 @@
 ### Arten of Grasp:
 
 - Definition:
-  - A system wherein a desired object is gripped by the fingers of a robot and is generally called a **grasp**
+  - A system wherein a desired object is gripped by the fingers of a robot and is generally called a **grasp** 
 
 - **Precision grasp**: objects gripped by fingertips only
 - **Force-closure- grasp** is a grasp which is able to:
@@ -134,49 +134,6 @@ In the situation of point contact
 ### The neuropsychology of grasping 
 
 - in reach-to-grasp experiment, the finger grip aperture of patients with brain damage (optic ataxia) was abnormally large, and the usual correlation between maximum grip aperture and object size are missing.
-
-### Tactile sensing in human hands
-
-- Tactile sensing is important for all manipulation tasks
-
-  | Afferent type (and response properties)                      | Receptive field (and probe) | Density (afferents per cm2) |
-  | ------------------------------------------------------------ | --------------------------- | --------------------------- |
-  | FA-I(Fast adapting type I) <br />- Sensitive to dynamic skin deformation of relatively high frequency<br />- insensitive to static force<br />- Transmit enhanced representations of local spatial discontinuities (edge-contour, Braille-like stumuli (盲文)) | Weak point touch in palm    | just in fingertips          |
-  | FA-II(Fast adapting type II)<br />- extremely sensitive to mechanical transients(瞬态) and high-frequency vibrations propagating through tissues <br />- Insensitive to static force  <br />- Respond to distant events acting on hand-held objects | Light tapping               |                             |
-  | SA-I (slowly-adapting type I)<br />- sensitive to low -frequency dynamic skin deformation<br />- sensitive to static force<br />- Transmit enhanced representations of local spatial discontinuities | weak point touch in palm    | fingertips and fingers      |
-  | SA-II (slowly-adapting type II)<br />- Low dynamic sensitivity<br />- Sensitive to static force <br />- Sense tension in dermal and subcutaneous collagenous fibre strands<br />- can fire in the absence of externally applied stimulation and respond to remotely applied stretching of the skin | touch or skin stretch       |                             |
-
-  
-
-### Haptics in human grasping
-- features
-  - Grasping object heavily depends on haptic perception
-  - Different tactile receptors are activated during grasping phases
-  - Grip force is controlled by need load force
-  - Slip is detected and prevented
-
-[Screenshot-2019-12-30-at-19-50-24.png](https://postimg.cc/sBJQdqsC)
-
-- **reach phase**: 
-  - object is approached
-  - hand in grasping pre-shape
-  - control based on vision
-  - finger makes contact
-    - tactile: high frequency vibrations
-- **load phase**:
-  - fingers are closed
-  - tangential load force is increased
-  - grip force is adjusted accordingly to prevent finger slip
-  - object breaks contact with support surface
-    - tactile: high frequency vibrations
-- **lift phase**:
-  - grip force is controlled to prevent slip
-  - object if lifted from the surface
-  - object has reached desired height
-    - visual
-- **replace phase**:
-- humans use feed forward control to predict sensory input 
-- When prediction mismatches actual input corrective actions are taken
 
 ## Grasping Taxonomies
 ### purposes
