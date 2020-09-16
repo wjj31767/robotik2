@@ -102,20 +102,9 @@ In the situation of point contact
     1. a progressive opening of the grip with straightening of the fingers
     2. followed by a gradual closure of the grip until it matches the object's size
 - The point in time at which the thumb-finger opening is the largest (maximum grip aperture) is a clearly identifiable landmark that
-    - occurs with 60-70% of the duration of the reach and is highly correlated with the size of the object
+    - occurs with 60-70% of the duration of the reach
     - is highly correlated with the size of the object
   
-- grasping progress
-
-  1. The hand preshapes during its journey to the target object.
-
-  2. maximal grip aperture (distance between the tip of the thumb and the tip of index finger) typically occurs within 70% of the movement completion. 
-
-  3. Representation of traces demonstrating the scaling of maximum grip aperture with respect to object size.
-
-- Comparision of the kinematics of grasping in monkeys and humans: effect of size
-
-  - Grip size in a macaque monkey and a human subject. In both species, the grasping  component is characterized by a grip size that  increases up to a maximum and then decreases towards the end of the movement. The macaque data are presented **in absolute time**, whereas those for the human participants are presented in **normalized time**, as a percentage of movement duration. 
 
 ### Neurophysiology of grasping
 
