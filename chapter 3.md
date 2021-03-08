@@ -15,15 +15,19 @@
     - counteract any external disturbing forces that may try to loosen the grip
 ### Grasp properties:
 1. **Dexterity**: how should grasping fingers be configured?
+
 2. **Equilibrium**: How hard to squeeze the grasped object?
+
 3. **Stability**: How to remain unaffected by external disturbances?
+
 4. **Dynamic behavior**: How soft a grasp should be for a given task?
-[Screenshot-2019-12-30-at-12-31-48.png](https://postimg.cc/ZBq5SpSg)
+
+  ![image-20210308205547101](chapter 3.assets/image-20210308205547101.png)
 
 ### Grasp analysis and grasp synthesis
 - **Analysis** means the study of grasp properties for a given set of finger properties
 - **Synthesis** means the determination of the required finger properties  in order for the grasp to acquire some desired properties
-[Screenshot-2019-12-30-at-12-44-13.png](https://postimg.cc/wtgG3k3W)
+![image-20210308205559844](chapter 3.assets/image-20210308205559844.png)
 
 ### Grasp contacts
 In the situation of point contact
@@ -104,7 +108,7 @@ In the situation of point contact
 - The point in time at which the thumb-finger opening is the largest (maximum grip aperture) is a clearly identifiable landmark that
     - occurs with 60-70% of the duration of the reach
     - is highly correlated with the size of the object
-  
+
 
 ### Neurophysiology of grasping
 
