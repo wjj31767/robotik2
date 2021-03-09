@@ -22,12 +22,12 @@
 
 4. **Dynamic behavior**: How soft a grasp should be for a given task?
 
-  ![image-20210308205547101](chapter 3.assets/image-20210308205547101.png)
+  ![image-20210308205547101](./chapter3.assets/image-20210308205547101.png)
 
 ### Grasp analysis and grasp synthesis
 - **Analysis** means the study of grasp properties for a given set of finger properties
 - **Synthesis** means the determination of the required finger properties  in order for the grasp to acquire some desired properties
-![image-20210308205559844](chapter 3.assets/image-20210308205559844.png)
+![image-20210308205559844](./chapter3.assets/image-20210308205559844.png)
 
 ### Grasp contacts
 In the situation of point contact
