@@ -141,7 +141,7 @@ In the situation of point contact
 
 #### Cutkosky Taxonomy
 
-[[2020-01-09-13-27-49.png](https://i.postimg.cc/283WMpQR/2020-01-09-13-27-49.png)](https://postimg.cc/jL0CnF3Z)
+![image-20210309125313104](./chapter3.assets/image-20210309125313104.png)
 
 - Typical grasp motion of daily life
   
