@@ -173,7 +173,7 @@ In the situation of point contact
 - Motion at contact  
 	- Object reference frame moves relative to contact point frames. 
 
-[Screenshot-2020-01-13-at-11-22-51.png](https://postimg.cc/SXrxq9xX)
+![image-20210310135757893](./chapter3.assets/image-20210310135757893.png)
 
 ``` mermaid
 graph LR
@@ -267,7 +267,8 @@ Motion (sentence) as sequences of poses (words)
 - Definition: Postrual synergies are the correlation of degrees of freedom in patterns of more frequent use.
 [@paper](Marco  Santello  , Martha Flanders, John F.  Soechting  .  Postural Hand Synergies for  Tool Use  , The Journal of Neuroscience, 18(23): 10105  -  10115 (1998))
 
->  - Human were asked to perform grasp 57 kinds of objects with imaging
+>  - Description of the experiment
+>     - Tester imaged to grasp 57 different kinds of objects with corresponding grasp configuration and will be recorded with Cyberglove with 15 DoF 
 >  - Result:
 >     	- Considering only the first two principal components, 80% of the variance in the data can be represented.
 >         	- Using the first threee principal components, 97% of the variance can be represented
@@ -276,7 +277,10 @@ Motion (sentence) as sequences of poses (words)
 >  - There are two alternative solutions to this paradoxical result:
 >     - higher-order PCs are needed but represent noise (random variability) in the system
 >     - the higher-order PCs do in fact contribute to discriminating among hand shapes for different objects → additional DoF controlled by the CNS
-> - Role of higher order PC
+>  - Role of higher order PC
+>     - represent this rather limited co-variation in joint angles
+>     - discriminate among hand shapes for different objects
+>     - do not simply represent random variability (noise)
 >   - Determine how much the representative information increased as the number of PCs increased
 >     - if the higher-order PCs represent noise, the information about the object should not increase (may actually decrease) when higher-order PCs are used to define the hand posture
 >     - Conversely, if the higher-order PCs do contribute to discriminating among hand shapes, the information transmitted should increase as more PCs are included
@@ -290,7 +294,7 @@ Motion (sentence) as sequences of poses (words)
 >       - One coarse control of hand shape with a few synergies, and a finer level that may be affecting all the joints.
 >       - a finer level that may be affecting all the joints
 >     - This hypothesis is consistent with the observation that a disproportionate amount of sensorimotor cortical area is devoted to the hand. It is also consistent with previous demonstrations of a tendency for coordinated motion of the fingers.
-> - Conclution
+>  - Conclution
 >   - no straightforward relation : **object shape - hand shape**
 >     - Similar object shapes were often associated with grips that were quite distinct (i.e., precision vs power grips)
 >   - Relationship between static hand posture (i.e., kinematics) - control of contact force
@@ -414,7 +418,7 @@ Personalised prosthetic hands with semi-autonomous grasping abilities
 ## Grasping Known, Familiar and Unknown Objects
 
 ### 1. Grasping Known Objects
-[Screenshot-2020-01-02-at-10-45-06.png](https://postimg.cc/1nyvpQhw)
+![image-20210310135621465](./chapter3.assets/image-20210310135621465.png)
 ```mermaid
 graph TD
 St(Object models database)--Object models-->cond{Offline or Online}
@@ -452,7 +456,7 @@ op2.2--Grasp-->E(Execution)
 #### 2.2 Discriminative approaches
 - learn a discriminative function to separate positives(good) and negatives(bad) grasps
 - use low-level 2D and/or 3D features
-[Screenshot-2020-01-02-at-11-42-20.png](https://postimg.cc/6TVyj42d)
+![image-20210310140027688](./chapter3.assets/image-20210310140027688.png)
 ```mermaid
 graph TD
 st1>Offline Learning]-->st1.1(Labled examples database)
