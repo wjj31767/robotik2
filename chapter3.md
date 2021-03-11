@@ -24,8 +24,9 @@
 
   ![image-20210308205547101](./chapter3.assets/image-20210308205547101.png)
 
-### Grasp analysis and grasp synthesis
-- **Analysis** means the study of grasp properties for a given set of finger properties
+### Grasp analysis and grasp synthesis - [x] -
+
+- **Analysis** means the study of grasp properties for a given set of finger properties 
 - **Synthesis** means the determination of the required finger properties  in order for the grasp to acquire some desired properties
 ![image-20210308205559844](./chapter3.assets/image-20210308205559844.png)
 
@@ -37,16 +38,19 @@ In the situation of point contact
 ### grasp hypotheses
 
 [@paper](Jeannette Bohg, Antonio Morales, Tamim Asfour, Danica Kragic, Data-Driven Grasp Synthesis - A Survey. IEEE Tran. on Robotics, pp. 289-309, vol. 30, no. 2, 2014)
-- Aspects that influence the generation of grasp hypotheses
-  - Prior object knowledge (known/ unknown/ familiar)
-  - Object-grasp representations (local/ global)
-  - object features (multi-modal/ 3D/ 2D)
-  - Grasp synthesis(analysis/ data-driven)
-  - Task
-  - Hand kinematics(gripper/ multi-fingered)
-### Object classes (Classification of the different approaches)
+
+#### Aspects that influence the generation of grasp hypotheses - [x] -
+
+- Prior object knowledge (known/ unknown/ familiar)
+- Object-grasp representations (local/ global)
+- object features (multi-modal/ 3D/ 2D)
+- Grasp synthesis(analysis/ data-driven)
+- Task
+- Hand kinematics(gripper/ multi-fingered)
+
+### Object classes (Classification of the different approaches) - [x] -
 - **Known objects**(Grasp planning is always about known objects)
-    - Known object geometry (we have a complete geometric object model)
+    - Known object geometry (we have a complete geometric object model) - [x] -
     - Approach: Use various grasp planning methods(only for known objects)
 - **Familiar objects**: 
     - Class of object is known
@@ -105,9 +109,11 @@ In the situation of point contact
   - During the a reach-to-grasp movement
     1. a progressive opening of the grip with straightening of the fingers
     2. followed by a gradual closure of the grip until it matches the object's size
-- The point in time at which the thumb-finger opening is the largest (maximum grip aperture) is a clearly identifiable landmark that
-    - occurs with 60-70% of the duration of the reach
-    - is highly correlated with the size of the object
+
+#### The point in time at which the thumb-finger opening is the largest (maximum grip aperture) is a clearly identifiable landmark that - [x] -
+
+- occurs with 60-70% of the duration of the reach
+- is highly correlated with the size of the object
 
 
 ### Neurophysiology of grasping
@@ -129,7 +135,7 @@ In the situation of point contact
 - in reach-to-grasp experiment, the finger grip aperture of patients with brain damage (optic ataxia) was abnormally large, and the usual correlation between maximum grip aperture and object size are missing.
 
 ## Grasping Taxonomies
-### purposes
+### purposes - [x] -
 
 - Benchmark to test robot hand abilities
 - Simplify grasp synthesis
@@ -263,70 +269,81 @@ Motion (sentence) as sequences of poses (words)
     - Spatial translation model
       - considers only transltion along one coordinate axis(valid for walking in a straight line)
       - Average from all observed instances of a certain translation
-### Postural Synergies 
-- Definition: Postrual synergies are the correlation of degrees of freedom in patterns of more frequent use.
-[@paper](Marco  Santello  , Martha Flanders, John F.  Soechting  .  Postural Hand Synergies for  Tool Use  , The Journal of Neuroscience, 18(23): 10105  -  10115 (1998))
+## Postural Synergies 
 
->  - Description of the experiment
->     - Tester imaged to grasp 57 different kinds of objects with corresponding grasp configuration and will be recorded with Cyberglove with 15 DoF 
->  - Result:
->     	- Considering only the first two principal components, 80% of the variance in the data can be represented.
->         	- Using the first threee principal components, 97% of the variance can be represented
->  - This suggests a significant reduction in the number of degrees of freedom (DOF) from 15 to 2 or 3
->  - The study shows also that there were also many instances in which pairs of joint angles were only poorly correlated, suggesting that there are more than two effective degrees of freedom for the control of hand posture and that several higher-orer PCs would also be needed to represent this rather limited co-variation in joint angles
->  - There are two alternative solutions to this paradoxical result:
->     - higher-order PCs are needed but represent noise (random variability) in the system
->     - the higher-order PCs do in fact contribute to discriminating among hand shapes for different objects → additional DoF controlled by the CNS
->  - Role of higher order PC
->     - represent this rather limited co-variation in joint angles
->     - discriminate among hand shapes for different objects
->     - do not simply represent random variability (noise)
->   - Determine how much the representative information increased as the number of PCs increased
->     - if the higher-order PCs represent noise, the information about the object should not increase (may actually decrease) when higher-order PCs are used to define the hand posture
->     - Conversely, if the higher-order PCs do contribute to discriminating among hand shapes, the information transmitted should increase as more PCs are included
->     - The amount of information continued to increase monotonically up to at least the 5th or the 6th PC, even though these higher-order PCs contributed little to the variance
->     - clearly, more than two degrees of freedom are used to mold the hand into the shape appropriate to grasp a particular object, and **the higher-order PCs do not simply represent random variability (noise)**
->   - Given that the higher-order PCs do not simply represent noise, it is possible that the hand postures associated with a few of the objects might be the best represented by higher PCs
->     - Hence, higher PCs do not seem to contribute substantially to any one particular hand posture
->     - These features were also found in other subjects
->   - This observation suggests the following interpretation
->     - The control of hand shape is effected at two levels:
->       - One coarse control of hand shape with a few synergies, and a finer level that may be affecting all the joints.
->       - a finer level that may be affecting all the joints
->     - This hypothesis is consistent with the observation that a disproportionate amount of sensorimotor cortical area is devoted to the hand. It is also consistent with previous demonstrations of a tendency for coordinated motion of the fingers.
->  - Conclution
->   - no straightforward relation : **object shape - hand shape**
->     - Similar object shapes were often associated with grips that were quite distinct (i.e., precision vs power grips)
->   - Relationship between static hand posture (i.e., kinematics) - control of contact force
->     - They are not independent, because the hand must be shaped properly so that the correct set of fingers makes contact with the object.
->     - But there is no one-to-one between posture and force control
->   - This is consistent with observations of neural activity in the hand area of primary motor cortex:
->     - Monkeys controlling the grasp force of variously shaped objects showed that **1) the neural correlates of force and 2) the neural correlates of kinematics are dissociated**  
->
+- [@paper](Marco  Santello  , Martha Flanders, John F.  Soechting  .  Postural Hand Synergies for  Tool Use  , The Journal of Neuroscience, 18(23): 10105  -  10115 (1998))
 
-> Antonio  Bicchi  , Marco Gabiccini, Marco  Santello  .  Modelling natural and artificial  hands with synergies  3153  -  3161 (2011)
->  - How do humans grasp? Do they control all the hand’s DoF individually?
-> 	- Not all finger joints are controlled independently when grasping an object
-> 	- Movements of the finger joints are strongly correlated
-> 	- Grasping movements are dominated by synergies in a low - dimensional posture space 
-> c3
-> - Problem with the synergistic model so far
->   - Using previous synergy, it will penetrate the object
->     - Contact forces of the object not considered
->     - No compliance in the hand
-> - Soft synergy Model
->   - Redundancy in the apparatus(human hands), together with its nonlinear elastic characteristic is used for changing the compliance of the agonist-antagonist pairs.
->   - Question: How can a model of elasticity be introduced into the synergy model?
->   - Answer: Use a combination of two force fields to control the physical hand.
->     - One field is attracting the physical hand towards a virtual hand (which is shaped on the synergy manifold). The attractions forces are generated by the hand impedance
->     - The other field is repelling the hand from penetrating the object
->   - Question 2: 
->     - Is the soft synergy model relevant to grasping? 
->     - Can the first few synergies (which were observed to generate a large part of pregrasp postures)  also explains the distribution patterns for grasp forces?
->   - Answer:
->     - Yes, Application of the soft synergy model also allows making predictions on force distributions in manipulation
->   - Experiment 
->     - Associate each postural synergy through a numerical model of hand and object compliance to a contact force pattern
+### Definition - [x] -
+
+Postrual synergies are the correlation of degrees of freedom in patterns of more frequent use.
+
+### Description of the experiment - [x] -
+
+- Tester imaged to grasp 57 different kinds of objects with corresponding grasp configuration and will be recorded with Cyberglove with 15 DoF 
+
+### Postural synergy experiment Result - [x] -
+
+ - Considering only the first two principal components, 80% of the variance in the data can be represented.
+- Using the first threee principal components, 97% of the variance can be represented
+- This suggests a significant reduction in the number of degrees of freedom (DOF) from 15 to 2 or 3
+- The study shows also that there were also many instances in which pairs of joint angles were only poorly correlated, suggesting that there are more than two effective degrees of freedom for the control of hand posture and that several higher-orer PCs would also be needed to represent this rather limited co-variation in joint angles
+- There are two alternative solutions to this paradoxical result:
+   - higher-order PCs are needed but represent noise (random variability) in the system
+   - the higher-order PCs do in fact contribute to discriminating among hand shapes for different objects → additional DoF controlled by the CNS
+
+### Role of higher order PC - [x] -
+
+- represent this rather limited co-variation in joint angles
+- discriminate among hand shapes for different objects
+- do not simply represent random variability (noise)
+ - Determine how much the representative information increased as the number of PCs increased
+   - if the higher-order PCs represent noise, the information about the object should not increase (may actually decrease) when higher-order PCs are used to define the hand posture
+   - Conversely, if the higher-order PCs do contribute to discriminating among hand shapes, the information transmitted should increase as more PCs are included
+   - The amount of information continued to increase monotonically up to at least the 5th or the 6th PC, even though these higher-order PCs contributed little to the variance
+   - clearly, more than two degrees of freedom are used to mold the hand into the shape appropriate to grasp a particular object, and **the higher-order PCs do not simply represent random variability (noise)**
+ - Given that the higher-order PCs do not simply represent noise, it is possible that the hand postures associated with a few of the objects might be the best represented by higher PCs
+   - Hence, higher PCs do not seem to contribute substantially to any one particular hand posture
+   - These features were also found in other subjects
+ - This observation suggests the following interpretation
+   - The control of hand shape is effected at two levels:
+     - One coarse control of hand shape with a few synergies, and a finer level that may be affecting all the joints.
+     - a finer level that may be affecting all the joints
+   - This hypothesis is consistent with the observation that a disproportionate amount of sensorimotor cortical area is devoted to the hand. It is also consistent with previous demonstrations of a tendency for coordinated motion of the fingers.
+- Conclution
+ - no straightforward relation : **object shape - hand shape**
+   - Similar object shapes were often associated with grips that were quite distinct (i.e., precision vs power grips)
+ - Relationship between static hand posture (i.e., kinematics) - control of contact force
+   - They are not independent, because the hand must be shaped properly so that the correct set of fingers makes contact with the object.
+   - But there is no one-to-one between posture and force control
+ - This is consistent with observations of neural activity in the hand area of primary motor cortex:
+   - Monkeys controlling the grasp force of variously shaped objects showed that **1) the neural correlates of force and 2) the neural correlates of kinematics are dissociated**  
+
+Antonio  Bicchi  , Marco Gabiccini, Marco  Santello  .  Modelling natural and artificial  hands with synergies  3153  -  3161 (2011)
+ - How do humans grasp? Do they control all the hand’s DoF individually?
+	- Not all finger joints are controlled independently when grasping an object
+	- Movements of the finger joints are strongly correlated
+	- Grasping movements are dominated by synergies in a low - dimensional posture space 
+c3
+- Problem with the synergistic model so far
+  - Using previous synergy, it will penetrate the object
+    - Contact forces of the object not considered
+    - No compliance in the hand
+- Soft synergy Model
+  - Redundancy in the apparatus(human hands), together with its nonlinear elastic characteristic is used for changing the compliance of the agonist-antagonist pairs.
+
+### How can a model of elasticity be introduced into the synergy model?
+
+-  Use a combination of two force fields to control the physical hand.
+  - One field is attracting the physical hand towards a virtual hand (which is shaped on the synergy manifold). The attractions forces are generated by the hand impedance
+  - The other field is repelling the hand from penetrating the object 
+
+### Is the soft synergy model relevant to grasping? or Can the first few synergies (which were observed to generate a large part of pregrasp postures)  also explains the distribution patterns for grasp forces?
+
+- Answer:
+  - Yes, Application of the soft synergy model also allows making predictions on force distributions in manipulation
+- Experiment 
+  - Associate each postural synergy through a numerical model of hand and object compliance to a contact force pattern
+
 ### Eigengrasps
 [@paper](Matei Ciocarlie, Corey Goldfeder, Peter Allen. Dimensionality reduction for hand-independent dexterous robotic grasping, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), (2007))
 
@@ -525,19 +542,28 @@ op2.3--Grasp-->E(Execution)
 - goal
    - **Generalized grasping information** for familiar objects
    - Grasps can be used for familiar objects and **partly known objects**
-- Offline learning
-   - **Train** grasps on multiple familiar object models
-   - Identify promising grasps with **transferability success measure**
-   - Steps:
-      - Object shape segmentation
-      - Labeling with task-related information
-      - part-based grasp planning
-- Online
-   - **Transfer** grasps to similar novel objects
-   - Steps:
-      - localization and approximation of object parts
-      - grasp transfer to novel object
-[Screenshot-2020-01-02-at-19-39-30.png](https://postimg.cc/D8gWWhcR)
+
+##### Offline learning steps - [x] -  
+
+1. Object shape segmentation
+
+2. Labeling with task-related information
+3. part-based grasp planning
+
+- Not necessary part
+  - **Train** grasps on multiple familiar object models
+  - Identify promising grasps with **transferability success measure**
+
+##### Online learning steps - [x] -
+
+1. localization and approximation of object parts
+2. grasp transfer to novel object
+
+- Not necessary part
+  - **Transfer** grasps to similar novel objects
+
+  - [Screenshot-2020-01-02-at-19-39-30.png](https://postimg.cc/D8gWWhcR)
+
 ### 3. Grasping Unknown Objects
 #### 3.1 Concept
 - unknown objects(difficulty):

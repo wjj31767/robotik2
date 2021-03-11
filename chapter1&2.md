@@ -1,7 +1,8 @@
 [TOC]
 
 **Anthropomatics** is the science of the symbioses between human and machine
-**Why humanoids?** 
+
+## Why humanoids?  - [x] -
 
 - Versatility 
 
@@ -16,8 +17,10 @@
 - Acceptance
 
   - human-like appearance may support and intuitive human-robot interaction but Uncanny Valley tells us something different!
-  - Uncanny Valley:
-    - The uncanny valley is the region of negative emotional response towards robots that seems 'almost' human. Movement amplifies the emotional response
+
+## Uncanny Valley:
+
+- The uncanny valley is the region of negative emotional response towards robots that seems 'almost' human. Movement amplifies the emotional response
 
 - Building Humanoids = Building Human-Centred Technologies 
 

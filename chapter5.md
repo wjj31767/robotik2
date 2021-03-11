@@ -85,8 +85,8 @@ Idea: Reproduction of mirror neurones by movement primitives
    - Motion alphabet, similar to natural language
    - Library of motion primitives as DMPs
    - Tasks as sequences of motion primitives
-### Learning from Human Observation
-[Screenshot-2020-01-07-at-14-40-26.png](https://postimg.cc/yJnfgcTM)
+### Learning from Human Observation - [x] -
+![image-20210312002355986](./chapter5.assets/image-20210312002355986.png)
 ```mermaid
 graph TD
 A[Observation: 1.Observation of human actions 2. Markerless/marker-based] --> B[Generalization: 1. Learning generalized representations of actions 2. Learning task constraints]
