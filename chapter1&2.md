@@ -49,3 +49,39 @@
 - Determine distances between the fingertips
   - Decreased distances indicate a deformable object
 
+## The Master Motor Map(MMM) - [x] -
+
+**Unifying framework** for capturing, representation, visualization and whole body human motion and mapping/converting to different embodiments
+
+![image-20210312215715918](./chapter1&2.assets/image-20210312215715918.png)
+
+#### Goal - [x] -
+
+- offer an unified representation of bodies models to design humanoid robots
+- Reference model of the human body
+  - for humanoid robot design
+  - Imitation of human actions
+  - Action recognition
+  - Visualization of human movements
+- *Interfaces and data structures* for the *transfer of motor knowledge* between different embodiments
+
+#### Description of the three main models in human body reference in MMM - [x] -
+
+- **Kinematic model**: joints and segment lengths
+- **Dynamic model**: 
+  - segment mass 
+  - center of mass
+  - moments of inertia
+- **Statistic/anthropomorphic model**: Segment properties defined as a function of global parameters
+
+#### Motion reproduction using MMM:
+
+- Data from stereo based markerless human motion capture system
+- Data from VICON system(SFB 588)
+
+#### How to use MMM - [x] -
+
+Replacement of any module(perception, recognition, visualization, reproduction) can be guaranteed by using the MMM as the exchange format
+
+ - All perceptive modules convert their output to the MMM format
+ - All recognition and reproduction modules convert the MMM format to their specific internal representation

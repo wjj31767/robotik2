@@ -13,7 +13,7 @@
 - **Force-closure- grasp** is a grasp which is able to:
     - generate an external force that the grasped object may have to exert on an external body and
     - counteract any external disturbing forces that may try to loosen the grip
-### Grasp properties:
+### Grasp properties - [x] -
 1. **Dexterity**: how should grasping fingers be configured?
 
 2. **Equilibrium**: How hard to squeeze the grasped object?
@@ -45,7 +45,7 @@ In the situation of point contact
 - Object-grasp representations (local/ global)
 - object features (multi-modal/ 3D/ 2D)
 - Grasp synthesis(analysis/ data-driven)
-- Task
+- Task (pick and place, handover)
 - Hand kinematics(gripper/ multi-fingered)
 
 ### Object classes (Classification of the different approaches) - [x] -
@@ -145,7 +145,7 @@ In the situation of point contact
 
 ### Arten
 
-#### Cutkosky Taxonomy
+#### Cutkosky Taxonomy - [x] -
 
 ![image-20210309125313104](./chapter3.assets/image-20210309125313104.png)
 
@@ -166,7 +166,7 @@ In the situation of point contact
 |*Mid-Power-Precision Grips*|Lateral Grip<br>Tripod Grip-Standard Type<br/>Tripod Grip-Variation I<br/>Tripod Grip-Variation II|
 |*Precision Grips*|Parallel Mild Flexion Grip<br/>Circular Mild Flexion Grip<br/>Tip Grip<br/>Parallel Extension Grip|
 |*Thumbless* |Adduction Grip|
-#### Bullock Taxonomy:
+#### Bullock Taxonomy - [x] -
 
 - Contact:
 	- Hand is touching an external object or the environment 

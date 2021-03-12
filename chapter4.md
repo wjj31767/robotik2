@@ -6,21 +6,36 @@
   - ~~definition1 c4 s8~~
   - ~~definition2 c4 s8~~
   - definition3: An agent is an active perceiver if it knows **why** it wishes to sense, and then chooses **what** to perceive, and determines **how**, **when** and **where** to achieve that perception.
-- five questions
-  [Screenshot-2020-01-04-at-20-50-17.png](https://postimg.cc/Yh5yy8DJ)
-   - **Why**
-     the current state of the agent determines **what its next actions might be** , **based on the expectations that its state generates**. These are termed Expectation-Action tuples. This would rely on any form of inductive inference because inductive reasoning takes specific information and makes a broader generalization that is considered probable. The only way to know is to test the conclusion. A fixed, pre-specified, control loop is not within this definition.
-   - **What**
-     Each expectation applies to a specific subset of the world that can be sensed and any subsequent action would be executed within that field. We may call this Scene Selection
-   - **How**
-     A variety of actions must precede the execution of a sensing or perceiving action
-     - **Mechanical Alignment**: The agent must be placed appropriately within the sensory field
-     - **Sensor alignment**: The sensing geometry must be set to enable the best sensing action for the agent's expectations( including components internal to a sensor such as focus, light levels, etc.)
-     - **Priming**: Finally, the agent's perception mechanism must be adapted to be most receptive for interpretation of sensing results, both specific to current agent expectations as well as more general world knowledge
-   - **When**
-     An agent expectation requires **Temporal Selection**, that is, each expectation has a temporal component that prescribes when is it valid and with what duration 
-   - **Where**
-     The sensory elements of each expectation can only be sensed from a particular viewpoint and its determination is modality specific. (For example, how an agent determines a viewpoint for a visual scene differs from how it does so for a tactile surface.) The specifics of the sensor and the geometry of its interaction with its domain combine to accomplish this. This will be termed the Viewpoint Selection process.
+
+### five questions - [x] -
+[Screenshot-2020-01-04-at-20-50-17.png](https://postimg.cc/Yh5yy8DJ)
+
+ - **Why**
+   the current state of the agent determines **what its next actions might be** , **based on the expectations that its state generates**. These are termed Expectation-Action tuples. This would rely on any form of inductive inference because inductive reasoning takes specific information and makes a broader generalization that is considered probable. The only way to know is to test the conclusion. A fixed, pre-specified, control loop is not within this definition.
+   
+ - **What**
+   Each expectation applies to a specific subset of the world that can be sensed and any subsequent action would be executed within that field. We may call this Scene Selection
+   
+   what is perceived? the robot autonomously selects which section the scene he perceives.
+   
+ - **How**
+   A variety of actions must precede the execution of a sensing or perceiving action
+   
+   - **Mechanical Alignment**: The agent must be placed appropriately within the sensory field
+   - **Sensor alignment**: The sensing geometry must be set to enable the best sensing action for the agent's expectations( including components internal to a sensor such as focus, light levels, etc.)
+   - **Priming**: Finally, the agent's perception mechanism must be adapted to be most receptive for interpretation of sensing results, both specific to current agent expectations as well as more general world knowledge
+   
+   how is perception achieved? the robot selects orientation from sensors, the body or the type of perception and interpretation
+   
+ - **When**
+   An agent expectation requires **Temporal Selection**, that is, each expectation has a temporal component that prescribes when is it valid and with what duration 
+   
+   when is something perceived? the robot choose point in time (now, in the Future) and the duration of perception
+   
+ - **Where**
+   The sensory elements of each expectation can only be sensed from a particular viewpoint and its determination is modality specific. (For example, how an agent determines a viewpoint for a visual scene differs from how it does so for a tactile surface.) The specifics of the sensor and the geometry of its interaction with its domain combine to accomplish this. This will be termed the Viewpoint Selection process.
+   
+   where is something perceived? the robot chooses its pose in the room (Agent pose) as well as the pose of the sensors used to determine the location of Determine perception 
 
 - Classical CV vs. Active Vision vs. Active Perception
 
@@ -54,14 +69,33 @@
 
 ## Active Visual Perception
 
-- possible goals: 
-  - Recognition (of known objects)
-  - Localization (determine spatial relationship between objects, and between the robot and the environment)
-    get an internal representation of the world state for planning and acting
-  - Observation (of motion, actions, relations over time)
-    Learn: trajectories, possible actions, probabilities of events...
-  - **Discovery** (of new things)
-    Learn: visual appearance of new, unknown objects
+### main idea - [x] -
+
+- use robot's action to make visual perception better
+- segment object with interaction: create hypotheses and validate
+
+### steps - [x] -
+
+- create initial object hypotheses
+
+- Interaction with hypotheses: push action
+
+- hypotheses relocate and determine transformation
+
+-  Verify and improve hypothesis 
+
+  
+
+### Why visual perception? - [x] -
+
+- Recognition (of known objects)
+- Localization (determine spatial relationship between objects, and between the robot and the environment)
+  get an internal representation of the world state for planning and acting
+- Observation (of motion, actions, relations over time)
+  Learn: trajectories, possible actions, probabilities of events...
+- **Discovery** (of new things)
+  Learn: visual appearance of new, unknown objects
+
 - Discovery and learning of unknown objects)
   - goal: Learn the visual appearance of an unknown object for future recognition
   - steps:
@@ -74,13 +108,16 @@
 ### Create initial object hypotheses
 
 - Generate initial object hypotheses based on camera images
-- Three heuristics:
-  - planes, cylinders and spheres amongst SIFT(RANSAC) features(Scale-Invariant Feature Transform)
-    --> textured objects
-  - Unicoloured regions of promising size(colour MSERs(Maximally stable extremal regions)) 
-    --> single-coloured objects
-  - Visually salient regions(DoG filter)
-    --> objects that are neither textured nor unicoloured
+
+#### Three heuristics - [x] -
+
+- planes, cylinders and spheres amongst SIFT(RANSAC) features(Scale-Invariant Feature Transform)
+  --> textured objects
+- Unicoloured regions of promising size(colour MSERs(Maximally stable extremal regions)) 
+  --> single-coloured objects
+- Visually salient regions(DoG filter)
+  --> objects that are neither textured nor unicoloured
+
 - general 
   - Generate hypotheses using all three heuristics
   - dense stereo matching to get 3D position of all pixels of the image
@@ -177,12 +214,14 @@ Iterative Closest Point for matching, using a distance in cartesian and colour s
   - Hearing(Audition)
   - Smell(Olfaction)
   - Taste(Gustation)
-- What is Haptic
-  - the sense of touch
-  - Any form of nonverbal communication involving touch
-  - ~~c4 s73~~
 
-### Haptic perception
+### What is Haptic - [x] -
+
+- the sense of touch
+- Any form of nonverbal communication involving touch
+- ~~c4 s73~~
+
+### Haptic perception - [x] - 
 
 - important questions in haptic perception
   - Haptic sensor technologies
@@ -226,26 +265,39 @@ Iterative Closest Point for matching, using a distance in cartesian and colour s
   [Screenshot-2020-01-12-at-21-58-39.png](https://postimg.cc/MnnDns0H)
 [@paper](Bierbaum, A., Rambow , M., Asfour, T., Dillmann, R. Grasp Affordances from Multi - Fingered Tactile Exploration using Dynamic Potential Fields. In IEEE/RAS International Conference on Humanoid Robots, 2009.)
 
-### Potential Field Based Exploration
+### Potential Field Based Exploration - [x] -
+
+#### introduction - [x] -
+
+there's two kinds of field, attract field and repulsive field, repulsive field will make the robot hand moves away from that field, the attract file will make the robot hand move towards to that field
 
 [@paper](Bierbaum, A., Rambow, M., Asfour, T., Dillmann, R. Grasp Affordances from Multi-Fingered Tactile Exploration using Dynamic Potential Fields. In IEEE/RAS International Conference on Humanoid Robots, 2009.)
 
 - Method originally developed for Motion planning and Mobile robot SLAM
 
-#### Exploration using dynamic potential fields
+#### Exploration using dynamic potential fields - [x] -
 - Fielder gradient direction (in operational space)
   - Unknow regions --> attractive  $\phi_a < 0$
   - Known regions --> repellent $\phi_r > 0$
-- Dynamic adaptation of potential fiel configuration from tactile response
-- Superposiotn of individual potential sources
+- field attraction
+- Dynamic adaptation of potential field configuration from tactile response
+- Superposition of individual potential sources
 $\ phi(x) = \sum_i phi_{r,i}(x) + \sum_j phi_{a,j}(x)$
-- Field initialization from pose and extension estimation of target objetct, e.g. by computer vison
+- Field initialization from pose and extension estimation of target object, e.g. by computer vison
 - Steps:
   - Generation of trajectories for multi-point end-effectors(Robot Control Points, RCPs) using real-time gradient calculation
   - Harmonic potential functions to minimize number of local minima
   - Reconfiguration strategy for resolving structural local minima of the hand
   - Real-time inverse kinematics using Virtual Model Control(VMC)
   - Result: Oriented 3D point set with irregular density 
+
+#### Move along the surface of object - [x] -
+
+with the sum of repulsive field of explored surface and attractive field of unexplored field, the force will make robot hand moves along the surface of object
+
+#### deform object and undeform object  - [x] -
+
+start from when tactile sensors detect the object and calculate the diameter of the object and distances between fingers. Add the force to object and see if the diameter of object and distances between fingers changes, if yes, the object is deform object. if not the object is not deform object
 
 ### Haptic Exploration with Movemaster
 
