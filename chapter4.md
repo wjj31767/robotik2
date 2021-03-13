@@ -228,7 +228,7 @@ Iterative Closest Point for matching, using a distance in cartesian and colour s
   - Object shape estimation based on collected sparse haptic data
   - Application, e.g. grasping unknown objects
 
-#### Haptics = tactile + Proprioception
+#### Haptics = tactile + Proprioception - [x] -
 
 - Tactile / Cutaneous:
   - temperature, pressure, vibration, slip, pain
